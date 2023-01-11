@@ -4,3 +4,4 @@
 - Alexi Most
 - Lucas Knezevich
 - jason beutler
+- Victor Navarro
