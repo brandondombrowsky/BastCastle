@@ -3,5 +3,6 @@
 ### Team Members
 - Alexi Most
 - Lucas Knezevich
-- jason beutler
+- Jason Beutler
 - Victor Navarro
+- Ashray Thapa
