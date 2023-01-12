@@ -5,4 +5,3 @@
 - Lucas Knezevich
 - Jason Beutler
 - Victor Navarro
-- Ashray Thapa
