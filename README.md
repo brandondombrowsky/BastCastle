@@ -7,4 +7,4 @@
 - Victor Navarro
 - Ashray Thapa
 - Brandon Dombrowsky
-- funzies
+- TGIF
