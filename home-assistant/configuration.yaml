@@ -11,6 +11,6 @@ tts:
   - platform: google_translate
 
 automation: !include automations.yaml
-script: !include_dir_list scripts/ 
-script default: !include scripts.yaml
+script: !include_dir_list scripts/ # include everything in this directory
+script default: !include scripts.yaml # include a single file
 scene: !include scenes.yaml
