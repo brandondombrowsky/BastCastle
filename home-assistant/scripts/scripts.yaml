@@ -1,0 +1,56 @@
+# Change the colors of 2 lightbulbs
+test_script:
+  alias: cycle colors
+  sequence:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.make_east_mojito
+    metadata: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - service: scene.turn_on
+    target:
+      entity_id: scene.new_scene
+    metadata: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - service: scene.turn_on
+    target:
+      entity_id: scene.make_east_ocean
+    metadata: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  - service: scene.turn_on
+    target:
+      entity_id: scene.make_west_sunset
+    metadata: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+  mode: single
+  icon: mdi:chat-question
+# Loop test_script 5 times
+loop_5_times:
+  alias: loop cycle colors 5 times
+  sequence:
+  - repeat:
+      count: '5'
+      sequence:
+      - service: script.test_script
+        data: {}
+  - service: scene.turn_on
+    target:
+      entity_id: scene.make_lights_ambient
+    metadata: {}
+  mode: single
