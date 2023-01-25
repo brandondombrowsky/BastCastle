@@ -1,0 +1,31 @@
+# Flip flop one light according to the status of another
+- id: '1674420359624'
+  alias: Flip Flop
+  description: ''
+  trigger:
+  - platform: device
+    type: changed_states
+    device_id: 9210288e5fbd673b14cd079552328c2c
+    entity_id: light.west
+    domain: light
+  condition: []
+  action:
+  - type: toggle
+    device_id: cb3a0da102e68c06dfba2102d4e192d1
+    entity_id: light.east
+    domain: light
+  - service: persistent_notification.create
+    data:
+      message: Light toggled
+  mode: single
+- id: '1674508920727'
+  alias: Cycle the lights at 9pm
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  condition: []
+  action:
+  - service: script.loop_5_times
+    data: {}
+  mode: single
