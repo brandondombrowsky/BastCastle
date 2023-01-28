@@ -1,2 +1,4 @@
 # Home Assistant secrets (credentials) file
 *secrets*.yaml
+# Allow example secrets file
+!example_secrets.yaml

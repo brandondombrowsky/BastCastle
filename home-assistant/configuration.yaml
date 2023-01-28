@@ -11,6 +11,14 @@ tts:
   - platform: google_translate
 
 automation: !include automations.yaml
-script: !include_dir_list scripts/ # include everything in this directory
-script default: !include scripts.yaml # include a single file
+# Include all script files from the 'scripts/' directory
+script: !include_dir_list scripts/ 
+script default: !include scripts.yaml
 scene: !include scenes.yaml
+
+# Shows how to reference a secret credential
+# Stored in 'secrets.yaml' by convention, but other filenames
+#   work too, as shown here.
+#auth_providers:
+#  - type: legacy_api_password
+#    api_password: !secret my_secret_credential
