@@ -10,5 +10,4 @@ jobs:
       - name: 🚀 Run Home Assistant Configuration Check
         uses: frenck/action-home-assistant@v1
         with:
-          path: "./config"
           version: stable
