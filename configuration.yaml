@@ -10,7 +10,7 @@ frontend:
 tts:
   - platform: google_translate
 
-automation: !include automation.yaml
+automation: !include automations.yaml
 # Include all script files from the 'scripts/' directory
 script: !include_dir_list scripts/ 
 script default: !include scripts.yaml
