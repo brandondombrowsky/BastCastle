@@ -4,11 +4,10 @@ loop_6_times:
     - repeat:
         count: '5'
         sequence:
-        - service: script.test_script
-          data: {}
+          - service: script.test_script
+            data: {}
     - service: scene.turn_on
       target:
         entity_id: scene.make_lights_ambient
       metadata: {}
   mode: single
-  
