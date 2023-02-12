@@ -1,13 +1,14 @@
 loop_6_times:
   alias: loop cycle colors 6 times
   sequence:
-  - repeat:
-      count: '5'
-      sequence:
-      - service: script.test_script
-        data: {}
-  - service: scene.turn_on
-    target:
-      entity_id: scene.make_lights_ambient
-    metadata: {}
+    - repeat:
+        count: '5'
+        sequence:
+        - service: script.test_script
+          data: {}
+    - service: scene.turn_on
+      target:
+        entity_id: scene.make_lights_ambient
+      metadata: {}
   mode: single
+  

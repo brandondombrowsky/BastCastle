@@ -8,42 +8,42 @@
       min_mireds: 153
       max_mireds: 454
       effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
+        - Ocean
+        - Romance
+        - Sunset
+        - Party
+        - Fireplace
+        - Cozy
+        - Forest
+        - Pastel Colors
+        - Wake up
+        - Bedtime
+        - Warm White
+        - Daylight
+        - Cool white
+        - Night light
+        - Focus
+        - Relax
+        - True colors
+        - TV time
+        - Plantgrowth
+        - Spring
+        - Summer
+        - Fall
+        - Deepdive
+        - Jungle
+        - Mojito
+        - Club
+        - Christmas
+        - Halloween
+        - Candlelight
+        - Golden white
+        - Pulse
+        - Steampunk
+        - Rhythm
       supported_color_modes:
-      - color_temp
-      - rgbw
+        - color_temp
+        - rgbw
       color_mode: brightness
       brightness: 194
       effect: Romance
@@ -63,42 +63,42 @@
       min_mireds: 153
       max_mireds: 454
       effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
+        - Ocean
+        - Romance
+        - Sunset
+        - Party
+        - Fireplace
+        - Cozy
+        - Forest
+        - Pastel Colors
+        - Wake up
+        - Bedtime
+        - Warm White
+        - Daylight
+        - Cool white
+        - Night light
+        - Focus
+        - Relax
+        - True colors
+        - TV time
+        - Plantgrowth
+        - Spring
+        - Summer
+        - Fall
+        - Deepdive
+        - Jungle
+        - Mojito
+        - Club
+        - Christmas
+        - Halloween
+        - Candlelight
+        - Golden white
+        - Pulse
+        - Steampunk
+        - Rhythm
       supported_color_modes:
-      - color_temp
-      - rgbw
+        - color_temp
+        - rgbw
       color_mode: brightness
       brightness: 199
       effect: Ocean
@@ -117,42 +117,42 @@
       min_mireds: 153
       max_mireds: 454
       effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
+        - Ocean
+        - Romance
+        - Sunset
+        - Party
+        - Fireplace
+        - Cozy
+        - Forest
+        - Pastel Colors
+        - Wake up
+        - Bedtime
+        - Warm White
+        - Daylight
+        - Cool white
+        - Night light
+        - Focus
+        - Relax
+        - True colors
+        - TV time
+        - Plantgrowth
+        - Spring
+        - Summer
+        - Fall
+        - Deepdive
+        - Jungle
+        - Mojito
+        - Club
+        - Christmas
+        - Halloween
+        - Candlelight
+        - Golden white
+        - Pulse
+        - Steampunk
+        - Rhythm
       supported_color_modes:
-      - color_temp
-      - rgbw
+        - color_temp
+        - rgbw
       color_mode: brightness
       brightness: 199
       effect: Mojito
@@ -171,42 +171,42 @@
       min_mireds: 153
       max_mireds: 454
       effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
+        - Ocean
+        - Romance
+        - Sunset
+        - Party
+        - Fireplace
+        - Cozy
+        - Forest
+        - Pastel Colors
+        - Wake up
+        - Bedtime
+        - Warm White
+        - Daylight
+        - Cool white
+        - Night light
+        - Focus
+        - Relax
+        - True colors
+        - TV time
+        - Plantgrowth
+        - Spring
+        - Summer
+        - Fall
+        - Deepdive
+        - Jungle
+        - Mojito
+        - Club
+        - Christmas
+        - Halloween
+        - Candlelight
+        - Golden white
+        - Pulse
+        - Steampunk
+        - Rhythm
       supported_color_modes:
-      - color_temp
-      - rgbw
+        - color_temp
+        - rgbw
       color_mode: brightness
       brightness: 194
       effect: Sunset
@@ -224,42 +224,42 @@
       min_mireds: 153
       max_mireds: 454
       effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
+        - Ocean
+        - Romance
+        - Sunset
+        - Party
+        - Fireplace
+        - Cozy
+        - Forest
+        - Pastel Colors
+        - Wake up
+        - Bedtime
+        - Warm White
+        - Daylight
+        - Cool white
+        - Night light
+        - Focus
+        - Relax
+        - True colors
+        - TV time
+        - Plantgrowth
+        - Spring
+        - Summer
+        - Fall
+        - Deepdive
+        - Jungle
+        - Mojito
+        - Club
+        - Christmas
+        - Halloween
+        - Candlelight
+        - Golden white
+        - Pulse
+        - Steampunk
+        - Rhythm
       supported_color_modes:
-      - color_temp
-      - rgbw
+        - color_temp
+        - rgbw
       color_mode: brightness
       brightness: 38
       friendly_name: east
@@ -272,42 +272,42 @@
       min_mireds: 153
       max_mireds: 454
       effect_list:
-      - Ocean
-      - Romance
-      - Sunset
-      - Party
-      - Fireplace
-      - Cozy
-      - Forest
-      - Pastel Colors
-      - Wake up
-      - Bedtime
-      - Warm White
-      - Daylight
-      - Cool white
-      - Night light
-      - Focus
-      - Relax
-      - True colors
-      - TV time
-      - Plantgrowth
-      - Spring
-      - Summer
-      - Fall
-      - Deepdive
-      - Jungle
-      - Mojito
-      - Club
-      - Christmas
-      - Halloween
-      - Candlelight
-      - Golden white
-      - Pulse
-      - Steampunk
-      - Rhythm
+        - Ocean
+        - Romance
+        - Sunset
+        - Party
+        - Fireplace
+        - Cozy
+        - Forest
+        - Pastel Colors
+        - Wake up
+        - Bedtime
+        - Warm White
+        - Daylight
+        - Cool white
+        - Night light
+        - Focus
+        - Relax
+        - True colors
+        - TV time
+        - Plantgrowth
+        - Spring
+        - Summer
+        - Fall
+        - Deepdive
+        - Jungle
+        - Mojito
+        - Club
+        - Christmas
+        - Halloween
+        - Candlelight
+        - Golden white
+        - Pulse
+        - Steampunk
+        - Rhythm
       supported_color_modes:
-      - color_temp
-      - rgbw
+        - color_temp
+        - rgbw
       color_mode: brightness
       brightness: 38
       friendly_name: west
