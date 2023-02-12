@@ -1,4 +1,3 @@
-
 # Loads default set of integrations. Do not remove.
 default_config:
 
@@ -12,7 +11,7 @@ tts:
 
 automation: !include automations.yaml
 # Include all script files from the 'scripts/' directory
-script: !include_dir_list scripts/ 
+script: !include_dir_list scripts/
 script default: !include scripts.yaml
 scene: !include scenes.yaml
 
