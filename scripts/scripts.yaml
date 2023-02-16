@@ -54,4 +54,3 @@ loop_5_times:
         entity_id: scene.make_lights_ambient
       metadata: {}
   mode: single
-  
