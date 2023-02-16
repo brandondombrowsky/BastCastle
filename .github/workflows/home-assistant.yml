@@ -11,3 +11,4 @@ jobs:
         uses: frenck/action-home-assistant@v1
         with:
           version: stable
+-
