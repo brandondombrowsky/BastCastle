@@ -7,7 +7,7 @@ frontend:
 
 # Text to speech
 tts:
-    - platform: google_translate
+  - platform: google_translate
 
 automation: !include automations.yaml
 # Include all script files from the 'scripts/' directory
