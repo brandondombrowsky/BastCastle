@@ -4,23 +4,26 @@
 # Example: https://github.com/Burnett01/rsync-deployments
 
 name: Deploy
+
 on:
   workflow_run: # Only run this if linting and testing pass
-    workflows["Check"] # is this the correct workflow name?
+    workflows: ["Check"] # is this the correct workflow name?
+    types: ["completed"] # don't know if this will work
     branches: ["main", "cd-alexi"] # only run on main (test it on mine for now)
 
 jobs:
   home-assistant-deploy:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Deploy to EC2
-      if: github.ref == 'refs/heads/main' # only run deployment on main branch
-      uses: burnett01/rsync-deployments@5.1
-      with:
-          switches: -avzr --delete # any initial/required rsync flags (left as default)
-          path: ./homeassistant-config/ # source path
-          remote_path: /home/homeassistant/ # deployment target path
-          remote_host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com
-          remote_user: ubuntu
-          remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+    name: Deploy to EC2 instance
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2
+        if: github.ref == 'refs/heads/main' # only run deployment on main branch
+        uses: burnett01/rsync-deployments@5.1
+        with:
+            switches: -avzr --delete # any initial/required rsync flags (left as default)
+            path: ./homeassistant-config/ # source path
+            remote_path: /home/homeassistant/ # deployment target path
+            remote_host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com
+            remote_user: ubuntu
+            remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
 
