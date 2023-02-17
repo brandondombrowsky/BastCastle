@@ -4,7 +4,7 @@
 # Example: https://github.com/Burnett01/rsync-deployments
 # another example: https://stackoverflow.com/questions/67516571/github-action-triggered-by-success-of-a-different-action
 
-name: Deploy to EC2
+name: "Deploy to EC2"
 
 on:
   workflow_run: # Only run this if linting and testing pass
