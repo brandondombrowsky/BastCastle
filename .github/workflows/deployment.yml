@@ -8,7 +8,8 @@ name: Deploy
 on:
   workflow_run: # Only run this if linting and testing pass
     workflows: ["Check"] # is this the correct workflow name?
-    types: ["completed"] # don't know if this will work
+    types: # don't know if this will work
+      - completed
     branches: ["main", "cd-alexi"] # only run on main (test it on mine for now)
 
 jobs:
