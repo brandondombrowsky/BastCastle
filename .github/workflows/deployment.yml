@@ -4,12 +4,12 @@
 # Example: https://github.com/Burnett01/rsync-deployments
 # another example: https://stackoverflow.com/questions/67516571/github-action-triggered-by-success-of-a-different-action
 
-name: "Deploy to EC2"
+name: Deploy
 
-on:
-  workflow_run: # Only run this if linting and testing pass
-    workflows: [yamllint] # is this the correct workflow name? also add lintint back later
-    types: [completed] # don't know if this will work
+on: [push, pull_request]
+  # workflow_run: # Only run this if linting and testing pass
+    #workflows: [yamllint] # is this the correct workflow name? also add lintint back later
+    #types: [completed] # don't know if this will work
 
 jobs:
   on-success:
