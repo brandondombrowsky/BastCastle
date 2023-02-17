@@ -6,10 +6,12 @@
 
 name: Deploy
 
-on: [push, pull_request]
-  # workflow_run: # Only run this if linting and testing pass
-    #workflows: [yamllint] # is this the correct workflow name? also add lintint back later
-    #types: [completed] # don't know if this will work
+on:
+  workflow_run: # Only run this if linting and testing pass
+    workflows: 
+      - Check # is this the correct workflow name? also dd lintint back later
+    types: 
+      - completed # don't know if this will work
 
 jobs:
   on-success:
