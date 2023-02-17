@@ -11,7 +11,7 @@ on:
     workflows: 
       - Check # is this the correct workflow name? also dd lintint back later
     types: 
-      - completed # don't know if this will work
+      - requested # don't know if this will work
 
 jobs:
   on-success:
