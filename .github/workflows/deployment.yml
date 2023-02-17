@@ -8,7 +8,7 @@ name: Deploy to EC2
 
 on:
   workflow_run: # Only run this if linting and testing pass
-    workflows: ["Lint"] # is this the correct workflow name? also add lintint back later
+    workflows: [Lint] # is this the correct workflow name? also add lintint back later
     types: [completed] # don't know if this will work
 
 jobs:
