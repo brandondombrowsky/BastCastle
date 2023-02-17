@@ -15,7 +15,7 @@ jobs:
   on-success:
     name: Deploy to EC2 instance
     runs-on: ubuntu-latest
-    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - run: echo "First workflow was a success"
       - name: Deploy to EC2
@@ -28,9 +28,9 @@ jobs:
             remote_host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com
             remote_user: ubuntu
             remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
-   on-failure:
-     runs-on: ubuntu-latest
-     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-     steps:
-       - run: echo "First workflow was a failure"
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo "First workflow was a failure"
 
