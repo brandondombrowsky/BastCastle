@@ -15,6 +15,9 @@ rules:
   float-values: disable
   hyphens: enable
   indentation: enable
+    spaces: consistent
+    indent-sequences: true
+    check-multi-line-strings: false
   key-duplicates: enable
   key-ordering: disable
   line-length: enable
