@@ -9,7 +9,7 @@ name: Deploy
 on:
   workflow_run: # Only run this if linting and testing pass
     branches:
-      - 'alexi-cd'
+      - 'cd-alexi'
     workflows: ["Check"] # is this the correct workflow name? also dd lintint back later
     types: [requested] # don't know if this will work
 
