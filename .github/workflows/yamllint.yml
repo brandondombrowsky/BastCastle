@@ -10,4 +10,4 @@ jobs:
       - name: 🚀 Run yamllint
         uses: frenck/action-yamllint@v1
         with:
-          config: "./custom/.yamllint"
+          config: "./lint-config/.yamllint"
