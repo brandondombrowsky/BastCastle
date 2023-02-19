@@ -29,4 +29,3 @@
   - service: script.loop_5_times
     data: {}
   mode: single
-  
