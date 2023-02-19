@@ -10,4 +10,4 @@ jobs:
       - name: 🚀 Run yamllint
         uses: frenck/action-yamllint@v1
         with:
-          config: "homeassistant-config/" # Only lint HA config files
+          src: "homeassistant-config/" # Only lint HA config files
