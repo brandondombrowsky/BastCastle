@@ -14,7 +14,7 @@ rules:
   empty-values: disable
   float-values: disable
   hyphens: enable
-  indentation: enable
+  indentation:
     spaces: consistent
     indent-sequences: true
     check-multi-line-strings: false
