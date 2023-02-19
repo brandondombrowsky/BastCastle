@@ -3,13 +3,14 @@
 
 # Example: https://github.com/Burnett01/rsync-deployments
 # another example: https://stackoverflow.com/questions/67516571/github-action-triggered-by-success-of-a-different-action
+# another example: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-filters-to-target-specific-branches-for-workflow-run-events
 
 name: Deploy
 
 on:
   workflow_run: # Only run this if linting and testing pass
-    branches:
-      - 'cd-alexi'
+    #branches:
+      #- 'cd-alexi'
     workflows: ["Check"] # is this the correct workflow name? also dd lintint back later
     types: [requested] # don't know if this will work
 
