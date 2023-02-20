@@ -1,62 +1,26 @@
-# Bastle's Castle App - An Open Source Home Automation System
+# BastCastle Simple Home Automation using Home Assistant
 
-## App Story
-Our client, Mr. Bastle, has asked our team of developers to move his home network to the cloud, add some delightfully accomodidating application run comfortability hardware, and to do this as affordably as possible. Mr. Bastle's current system uses self directed networking hardware, and offers none of the hotel like amenities our team plans to introduce to this NEW home automations system. Further, being open source, you are able to configure and/or add to additional features you'd like in your home.
+## The haHA Gateway Drug
+As a part of a cloud computing practicum, a team of six came together to build a home automation process using Home Assitant for three specific use cases: locks, curtains, and vents. We started testing with lights, so we kept those scipts in for funzies. Further, we built our process in the cloud but optimized it for migration to a PI-Hole. 
 
-Further, and as an added service, BastlesCastle will utilize more "cognizant" data utiliztion so you no longer have to hear, "Garage doors locked," when they are already secured. Instead, BastlesCastle will reply, "your system is secure." This will aid in the amount of unnecessary data returned by devices we count on to do the work they were called upon to do. You will definately hear a failure message should that rarity occur.
+Take our blood, sweat, and tears and build upon this foundation. Add addtional use cases of your own. At this point, in the world of home automation IoT, the sky is the limit: lights, locks, solar panels, televisions, alarams, cameras, vents, curtains, blinds, switches, sprinklers, etc. 
 
-Additional features and benefits will be built out as the application comes to life.
+WARNING: once you get started with haHA, you won't stop! 
 
-## Currently Supported Soft / Hardware
-- Alexa
-- Google Assist
-- Cortania
-- Someouthercleveroroversaturedoption
+### Contributing Developers (should we link these to LI profiles?)
+- Alexi Most
+- Lucas Knezevich
+- Jason Beutler
+- Victor Navarro
+- Ashray Thapa
+- Brandon Dombrowsky
 
+## Getting Started
+This code is compatible with... AWS/yaml based scripting/etc
 
-### Initial Outstanding Contributing Developers
-    - Alexi Most
-    - Lucas Knezevich
-    - Jason Beutler
-    - Victor Navarro
-    - Ashray Thapa
-    - Brandon Dombrowsky
-
-## Necessary Soft / Hardware* Needed to Get Started
-- Windows
-- MacOS
-- LinnuxSomething_or_Other
-
-* possible to use with on-prem hardware
-
-## Compatable with These Smart Home Devices OSs
-- AWS
-- Google
-- Azure_whatever_they_use
-
-## Illustrated Four (or less) Part Operational Use (only add your image if slightly interested user/dev would need to see; otherwise keep your image in the wiki)
-text intro
-<4a>
-
-text intro
-<4b>
-
-text intro
-<4c>
-
-text intro
-<4d>
-
-text intro
-<4e>
-
-## Useful Links
-This software is used with lights
-- something.com
-This software is used with plugs
-- somethingelse.com
-This software is used with vents
-- somethingmore.com
+## Cloud vs PI-Hole
+- blah-blah-blah
+- blah-blah-blah
 
 ## Installation 
     1. Do this 
@@ -64,3 +28,12 @@ This software is used with vents
     3. Then do this
     4. Then do this
     5. Finally, you're done
+
+## Shouting Out Where Shouting Is Due
+- Home Assistant (link)
+- Frenck CI (link)
+- Frenck yamllint (link)
+- Curtain (product link/rating/video?)
+- Lock (product link/rating/video?)
+- Vents (product link/rating/video?)
+- Lights (product link/rating/video?)
