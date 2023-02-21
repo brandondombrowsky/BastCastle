@@ -1,0 +1,27 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+# Example: https://github.com/Burnett01/rsync-deployments
+# another example: https://stackoverflow.com/questions/67516571/github-action-triggered-by-success-of-a-different-action
+# another example: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-filters-to-target-specific-branches-for-workflow-run-events
+
+name: Deploy
+
+on:
+  workflow_run: # Only run this if linting and testing pass
+    workflows: ["Check"] # is this the correct workflow name? also dd lintint back later
+    types: [completed] # don't know if this will work
+    # branches: cd-alexi
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo "First workflow was a success"
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo "First workflow was a failure"
+
