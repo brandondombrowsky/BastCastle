@@ -9,7 +9,7 @@ name: Deploy
 
 on:
   workflow_run: # Only run this if linting and testing pass
-    workflows: ["Check"] # is this the correct workflow name? also dd lintint back later
+    workflows: [Lint, Check] # is this the correct workflow name? also dd lintint back later
     types: [completed] # don't know if this will work
     branches: alexi-deploy-cd
 
@@ -23,5 +23,5 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
-      - run: echo "First workflow was a failure"
+      - run: echo "Checks did not pass, no deployment"
 
