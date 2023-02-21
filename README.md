@@ -28,6 +28,8 @@ This code is compatible with... AWS/yaml based scripting/etc
     3. Then do this
     4. Then do this
     5. Finally, you're done
+    
+## Checkout the [Wiki page] (https://github.com/brandondombrowsky/BastCastle/wiki)
 
 ## Shouting Out Where Shouting Is Due
 - Home Assistant (link)
