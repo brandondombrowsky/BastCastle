@@ -17,18 +17,19 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
+      - uses: actions/checkout@v3
       - name: Deploy to EC2 instance
         if: github.ref == 'refs/heads/main' # Only run on main branch
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
-          path: ./homeassistant-config/* # Home Assistant configuration path in the repo
+          path: "./homeassistant-config/*" # Home Assistant configuration path in the repo
           remote_path: /home/homeassistant/ # Home Assistant configuration on the EC2 instance
           remote_host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com # todo: make a repo variable?
           remote_user: ubuntu
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
     
-  on-failure:
+  on-failure:    
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
