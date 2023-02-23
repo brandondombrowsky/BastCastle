@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     #if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
+      - name: show files
+        ls "$GITHUB_WORKSPACE"
       - name: Deploy to EC2 instance
         if: github.ref == 'refs/heads/alexi-test-cd' # Only run on main branch
         uses: burnett01/rsync-deployments@5.1
