@@ -1,13 +1,12 @@
 name: Lint
 on: [push, pull_request]
 jobs:
-  yamllint:
+  build:
     name: yamllint
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v2
       - name: 🚀 Run yamllint
-        uses: frenck/action-yamllint@v1
-        with:
-          path: "homeassistant-config/" # Only lint HA config files
+        run: |
+          yamllint .
