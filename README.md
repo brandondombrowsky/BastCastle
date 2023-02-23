@@ -3,7 +3,7 @@
 ## Building out home automation
 As a part of a cloud computing practicum, a team of six came together to build a home automation process using Home Assistant (HA) for three specific use cases: locks, curtains, and ventilation. We started testing with lights, so we kept those scripts in for fun. 
 
-Our four primary objectives were to (1) create a Home Assistant server deployed via docker ideally in the cloud. (2) Implement smart curtains to use with black out curtains. (3) Devise a solution for a smart central ac/heat system. (4) Ideally integrate with Google Assistant, so our client can use Google Assistant to invoke voice commands, including running HA routines (e.g. "Go to bed," which checks if front door is locked and if it is skips trying to lock it).
+Our four primary objectives were to (1) create a HA server deployed via docker ideally in the cloud. (2) Implement smart curtains to use with black out curtains. (3) Devise a solution for a smart central ac/heat system. (4) Ideally integrate with Google Assistant, so our client can use Google Assistant to invoke voice commands, including running HA routines (e.g. "Go to bed," which checks if front door is locked and if it is skips trying to lock it).
 
 Use our work as a foundation to build out your own home automation by adding additional use cases. At this point, in the world of home automation IoT, the sky is the limit: lights, locks, solar panels, televisions, alarms, cameras, vents, curtains, blinds, switches, sprinklers, etc.
 
