@@ -24,7 +24,7 @@ jobs:
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
-          path: homeassistant-config/* # Home Assistant configuration path in the repo
+          path: homeassistant-config # Home Assistant configuration path in the repo
           remote_path: /home/homeassistant/ # Home Assistant configuration on the EC2 instance
           remote_host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com # todo: make a repo variable?
           remote_user: ubuntu
