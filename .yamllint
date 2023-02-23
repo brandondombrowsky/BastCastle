@@ -8,19 +8,17 @@
 
 extends: default
 
-# Only HA config files have .yaml extension, workflow files are .yml, so we could also uncomment this if we'd like
 yaml-files:
   - '*.yaml'
-  # - '*.yml'   Commented out as this will also prevent linting on the GH workflow files
+  # - '*.yml'   Also prevents linting on the GH workflow files
   - '.yamllint'
 
 ignore:
   - .github/
 
 rules:
-   document-start: disable
-   indentation:
+  document-start: disable
+  indentation:
     spaces: consistent
     indent-sequences: consistent
     check-multi-line-strings: false
-
