@@ -1,24 +1,22 @@
-# BastCastle Simple Home Automation using Home Assistant
+# BastCastle Home Automation using Home Assistant
 
-## The haHA Gateway Drug
+## Building out home automation
 As a part of a cloud computing practicum, a team of six came together to build a home automation
 process using Home Assistant for three specific use cases: locks, curtains, and vents. We started testing
 with lights, so we kept those scripts in for fun. Further, we built our process in the cloud within an AWS
 EC2 instance but optimized it for migration to a Pi-hole.
 
-Take our blood, sweat, and tears and build upon this foundation. Add additional use cases of your own.
+Use our work as a foundation to build out your own home automation by adding additional use cases.
 At this point, in the world of home automation IoT, the sky is the limit: lights, locks, solar panels,
 televisions, alarms, cameras, vents, curtains, blinds, switches, sprinklers, etc.
 
-WARNING: once you get started with haHA, you won't stop! 
-
 ### Contributing Developers
-- [Alexi Most](https://www.linkedin.com/in/alyoshenka/) 
-- [Lucas Knezevich](https://www.linkedin.com/in/lucasknezevich/)
-- [Jason Beutler](https://www.linkedin.com/in/jasonpbeutler/)
-- Victor Navarro (need his link)
-- [Ashray Thapa](https://www.linkedin.com/in/ashray-thapa/)
-- [Brandon Dombrowsky](https://www.linkedin.com/in/brandondombrowsky/)
+- Alexi Most
+- Lucas Knezevich
+- Jason Beutler
+- Victor Navarro
+- Ashray Thapa
+- Brandon Dombrowsky
 
 ## Getting Started
 Though most configuration sources found online highly recommend running HA locally on a Pi-hole, our
@@ -39,11 +37,11 @@ a Windows system was [here](https://www.youtube.com/watch?v=dp-0hVjEo6A). Mac he
 
 ## Checkout the [Wiki page](https://github.com/brandondombrowsky/BastCastle/wiki) for more information. 
 
-## Shouting Out Where Shouting Is Due
-- [Home Assistant](https://www.home-assistant.io/)
-- [Frenck CI](https://github.com/frenck/home-assistant-config)
-- [Custom yamllint](https://yamllint.readthedocs.io/en/stable/configuration.html)
-- [Zemismart Curtain Track](https://www.zemismart.com/products/-bcm500ds-tyw)
-- [Yale Smart Lock](https://shopyalehome.com/collections/smart-locks/products/yale-assure-lock-sl-with-wi-fi-and-bluetooth?variant=39341912981636)
-- Vents (add a link)
-- Lights (add a link)
+## Important Links
+- [Home Assistant](https://www.home-assistant.io/) - Find out more about Home Assistant
+- [Frenck CI](https://github.com/frenck/home-assistant-config) - Learn more about our chosen CI 
+- [Custom yamllint](https://yamllint.readthedocs.io/en/stable/configuration.html) - We created our own linter, for more information about cusomizing our linter for your needs, check out this site.
+- [Zemismart Curtain Track](https://www.zemismart.com/products/-bcm500ds-tyw) - The curtains we used.
+- [Yale Smart Lock](https://shopyalehome.com/collections/smart-locks/products/yale-assure-lock-sl-with-wi-fi-and-bluetooth?variant=39341912981636) - The lock we used.
+- Vents - The vents we used.
+- Lights - The lights we started with.
