@@ -1,0 +1,24 @@
+---
+####
+# Used to:
+#  - Specify which yaml extensions are included
+#  - Specify which files to ignore
+#  - Modify some of the yamllint rules/checks
+####
+
+extends: default
+
+yaml-files:
+  - '*.yaml'
+  # - '*.yml'   Also prevents linting on the GH workflow files
+  - '.yamllint'
+
+ignore:
+  - .github/
+
+rules:
+  document-start: disable
+  indentation:
+    spaces: consistent
+    indent-sequences: consistent
+    check-multi-line-strings: false
