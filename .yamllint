@@ -1,29 +1,26 @@
+---
+####
+# Used to:
+#  - Specify which yaml extensions are included
+#  - Specify which files to ignore
+#  - Modify some of the yamllint rules/checks
+####
+
+extends: default
+
+# Only HA config files have .yaml extension, workflow files are .yml, so we could also uncomment this if we'd like
+yaml-files:
+  - '*.yaml'
+  # - '*.yml'   Commented out as this will also prevent linting on the GH workflow files
+  - '.yamllint'
+
+ignore:
+  - .github/
+
 rules:
-  braces: enable
-  brackets: enable
-  colons: enable
-  commas: enable
-  comments:
-    level: warning
-  comments-indentation:
-    level: warning
-  document-end: disable
-  document-start: disable
-  empty-lines: enable
-  empty-values: disable
-  float-values: disable
-  hyphens: enable
-  indentation:
+   document-start: disable
+   indentation:
     spaces: consistent
     indent-sequences: consistent
     check-multi-line-strings: false
-  key-duplicates: enable
-  key-ordering: disable
-  line-length: enable
-  new-line-at-end-of-file: enable
-  new-lines: enable
-  octal-values: disable
-  quoted-strings: disable
-  trailing-spaces: enable
-  truthy:
-    level: warning
+
