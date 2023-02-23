@@ -3,11 +3,11 @@
   alias: Flip Flop
   description: ''
   trigger:
-    - platform: device
-      type: changed_states
-      device_id: 9210288e5fbd673b14cd079552328c2c
-      entity_id: light.west
-      domain: light
+  - platform: device
+    type: changed_states
+    device_id: 9210288e5fbd673b14cd079552328c2c
+    entity_id: light.west
+    domain: light
   condition: []
   action:
   - type: toggle
