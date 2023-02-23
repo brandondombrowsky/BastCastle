@@ -29,13 +29,13 @@ Though most configuration sources found online highly recommend running HA local
 8. Continue adding/configuring scripts.
 9. Once everything is working to your satisfaction, you are done.
 
-### Checkout the [Wiki page](https://github.com/brandondombrowsky/BastCastle/wiki) for more information. 
+### Checkout the [Wiki](https://github.com/brandondombrowsky/BastCastle/wiki) page for more information. 
 
 ## Important Links
-- [Home Assistant](https://www.home-assistant.io/) - Find out more about Home Assistant
-- [Frenck CI](https://github.com/frenck/home-assistant-config) - Learn more about our chosen CI 
-- [Custom yamllint](https://yamllint.readthedocs.io/en/stable/configuration.html) - We created our own linter, for more information about cusomizing our linter for your needs, check out this site.
-- [Zemismart Curtain Track](https://www.zemismart.com/products/-bcm500ds-tyw) - The curtains we used.
+- [Home Assistant](https://www.home-assistant.io/) - Find out more about Home Assistant.
+- [Frenck's CI](https://github.com/frenck/home-assistant-config) - Learn more about our chosen CI.
+- [Custom yamllint](https://yamllint.readthedocs.io/en/stable/configuration.html) - We created our own linter. For more information about cusomizing our linter for your needs, check out this site.
+- [Zemismart Curtain Track](https://www.zemismart.com/products/-bcm500ds-tyw) - The curtain rod we used.
 - [Yale Smart Lock](https://shopyalehome.com/collections/smart-locks/products/yale-assure-lock-sl-with-wi-fi-and-bluetooth?variant=39341912981636) - The lock we used.
-- Vents - The vents we used.
-- Lights - The lights we started with.
+- Ventilation - We used smart switches to control vent power.
+- Lights - The lights we started out with.
