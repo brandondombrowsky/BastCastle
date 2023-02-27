@@ -62,3 +62,14 @@
     entity_id: switch.power_strip_5_damper_1
     domain: switch
   mode: single
+- id: 'open_zone_1'
+  alias: Open Zone 1
+  description: ""
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  mode: single
