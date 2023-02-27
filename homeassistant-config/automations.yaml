@@ -29,3 +29,20 @@
   - service: script.loop_5_times
     data: {}
   mode: single
+
+# Damper Automations
+- id: 'open_all_zones'
+  alias: Open All Zones
+  description: ""
+  trigger: []
+  condition: []
+  action:
+    - type: turn_off
+      device_id: 492ad6551d06b00d22a156bdde30507f
+      entity_id: switch.power_strip_5_damper_1
+      domain: switch
+    - type: turn_off
+      device_id: 492ad6551d06b00d22a156bdde30507f
+      entity_id: switch.power_strip_6_damper_2
+      domain: switch
+  mode: single
