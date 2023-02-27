@@ -37,12 +37,28 @@
   trigger: []
   condition: []
   action:
-    - type: turn_off
-      device_id: 492ad6551d06b00d22a156bdde30507f
-      entity_id: switch.power_strip_5_damper_1
-      domain: switch
-    - type: turn_off
-      device_id: 492ad6551d06b00d22a156bdde30507f
-      entity_id: switch.power_strip_6_damper_2
-      domain: switch
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  mode: single
+- id: 'close_zone_1'
+  alias: Close Zone 1
+  description: ""
+  trigger: []
+  condition:
+  - condition: device
+    type: is_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  action:
+  - type: turn_on
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
   mode: single
