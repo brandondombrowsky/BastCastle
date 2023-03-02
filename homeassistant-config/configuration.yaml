@@ -15,11 +15,8 @@ script: !include_dir_list scripts/
 script default: !include scripts.yaml
 scene: !include scenes.yaml
 
+# HTTPS configuration
 http:
-  # ssl_certificate: fullchain2.pem
-  # ssl_key: privkey2.pem
-  # ssl_certificate: certs/fullchain.pem
-  # ssl_key: certs/privkey.pem
   ssl_certificate: !secret ssl_cert
   ssl_key: !secret ssl_k
 
