@@ -1,0 +1,6 @@
+project_id: homeassistant2-21102
+service_account:
+  private_key: !secret google_private_key_alexi
+  client_email: !secret google_client_email_alexi
+  report_state: true
+expose_by_default: true
