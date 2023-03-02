@@ -5,21 +5,24 @@
 # another example: https://stackoverflow.com/questions/67516571/github-action-triggered-by-success-of-a-different-action
 # another example: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-filters-to-target-specific-branches-for-workflow-run-events
 
-name: Deploy
+name: Deploy - Test restart HA
 
 on:
-  workflow_run: # Only run this if linting and testing pass
-    workflows: [Lint, Check] # Necessary checks
-    types: [completed] # Only run when the checks have completed
+  #workflow_run: # Only run this if linting and testing pass
+  #  workflows: [Lint, Check] # Necessary checks
+  #  types: [completed] # Only run when the checks have completed
+  push:
+    branches:
+      - restart-ha-after-cd
 
 jobs:
   on-success:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to EC2 instance
-        if: github.ref == 'refs/heads/main' # Only run on main branch
+        #if: github.ref == 'refs/heads/main' # Only run on main branch
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
@@ -28,10 +31,18 @@ jobs:
           remote_host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com # todo: make a repo variable?
           remote_user: ubuntu
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+      - name: Restart Home Assistant
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com # todo: make a repo variable?
+          username: ubuntu
+          key: "${{ secrets.SSH_PRIVATE_KEY }}"
+          script: sudo docker restart homeassistant
+
     
   on-failure:    
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - run: echo "Checks did not pass, no deployment"
 
