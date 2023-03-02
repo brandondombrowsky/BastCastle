@@ -22,4 +22,3 @@ http:
   ssl_key: certs/privkey.pem
 
 google_assistant: !include google_assistant_integration.yaml
-
