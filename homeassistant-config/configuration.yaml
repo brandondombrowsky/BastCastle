@@ -15,9 +15,11 @@ script: !include_dir_list scripts/
 script default: !include scripts.yaml
 scene: !include scenes.yaml
 
-# Shows how to reference a secret credential
-# Stored in 'secrets.yaml' by convention, but other filenames
-#   work too, as shown here.
-#auth_providers:
-#  - type: legacy_api_password
-#    api_password: !secret my_secret_credential
+http:
+  # ssl_certificate: fullchain2.pem
+  # ssl_key: privkey2.pem
+  ssl_certificate: certs/fullchain.pem
+  ssl_key: certs/privkey.pem
+
+google_assistant: !include google_assistant_integration.yaml
+
