@@ -5,24 +5,21 @@
 # another example: https://stackoverflow.com/questions/67516571/github-action-triggered-by-success-of-a-different-action
 # another example: https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-filters-to-target-specific-branches-for-workflow-run-events
 
-name: Deploy - Test restart HA
+name: Deploy
 
 on:
-  #workflow_run: # Only run this if linting and testing pass
-  #  workflows: [Lint, Check] # Necessary checks
-  #  types: [completed] # Only run when the checks have completed
-  push:
-    branches:
-      - restart-ha-after-cd
+  workflow_run: # Only run this if linting and testing pass
+    workflows: [Lint, Check] # Necessary checks
+    types: [completed] # Only run when the checks have completed
 
 jobs:
   on-success:
     runs-on: ubuntu-latest
-    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to EC2 instance
-        #if: github.ref == 'refs/heads/main' # Only run on main branch
+        if: github.ref == 'refs/heads/main' # Only run on main branch
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
@@ -38,11 +35,10 @@ jobs:
           username: ubuntu
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
           script: sudo docker restart homeassistant
-
-    
+   
   on-failure:    
     runs-on: ubuntu-latest
-    # if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - run: echo "Checks did not pass, no deployment"
 
