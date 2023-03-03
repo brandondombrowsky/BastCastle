@@ -29,3 +29,82 @@
   - service: script.loop_5_times
     data: {}
   mode: single
+
+# Damper Automations
+- id: '1676525972977'
+  alias: Open All Zones
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  mode: single
+- id: '1677732984708'
+  alias: Close Zone 1
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - type: turn_on
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  mode: single
+- id: '1677733147879'
+  alias: Close Zone 2
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - type: turn_on
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  mode: single
+- id: '1677733183899'
+  alias: Open Zone 1
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  mode: single
+- id: '1677733202266'
+  alias: Open Zone 2
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  mode: single
