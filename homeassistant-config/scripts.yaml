@@ -1,4 +1,26 @@
-where_will_this_go:
-    alias: where_will_this_go?
-    sequence: []
-    mode: single
+my_thing:
+  alias: My thing
+  sequence:
+  - type: turn_on
+    device_id: 596de4e2003285eda2a4abe7128f031d
+    entity_id: light.alexi_west
+    domain: light
+  - type: turn_on
+    device_id: 3e621dd1d6c2c8bd30048430fbd9aaa0
+    entity_id: light.wiz_rgbw_tunable_87762a
+    domain: light
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - type: turn_off
+    device_id: 596de4e2003285eda2a4abe7128f031d
+    entity_id: light.alexi_west
+    domain: light
+  - type: turn_off
+    device_id: 3e621dd1d6c2c8bd30048430fbd9aaa0
+    entity_id: light.wiz_rgbw_tunable_87762a
+    domain: light
+  mode: single
+  icon: mdi:alarm-light

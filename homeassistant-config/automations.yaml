@@ -1,31 +1,78 @@
-# Flip flop one light according to the status of another
-- id: '1674420359624'
-  alias: Flip Flop
+# Damper Automations
+- id: '1676525972977'
+  alias: Open All Zones
   description: ''
-  trigger:
-  - platform: device
-    type: changed_states
-    device_id: 9210288e5fbd673b14cd079552328c2c
-    entity_id: light.west
-    domain: light
+  trigger: []
   condition: []
   action:
-  - type: toggle
-    device_id: cb3a0da102e68c06dfba2102d4e192d1
-    entity_id: light.east
-    domain: light
-  - service: persistent_notification.create
-    data:
-      message: Light toggled
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
   mode: single
-- id: '1674508920727'
-  alias: Cycle the lights at 9pm
+- id: '1677732984708'
+  alias: Close Zone 1
   description: ''
-  trigger:
-  - platform: time
-    at: '21:00:00'
+  trigger: []
   condition: []
   action:
-  - service: script.loop_5_times
-    data: {}
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - type: turn_on
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  mode: single
+- id: '1677733147879'
+  alias: Close Zone 2
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - type: turn_on
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
+  mode: single
+- id: '1677733183899'
+  alias: Open Zone 1
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  mode: single
+- id: '1677733202266'
+  alias: Open Zone 2
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_6_damper_2
+    domain: switch
   mode: single

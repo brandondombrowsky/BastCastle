@@ -21,3 +21,14 @@ http:
   ssl_key: !secret ssl_k
 
 google_assistant: !include google_assistant_integration.yaml
+
+# Allow Scenes/Scripts/Automations to show up in Google
+switch:
+  - platform: template
+    switches:
+      script_my_thing:
+        turn_on:
+          service: script.my_thing
+        turn_off:
+          service: script.my_thing # something different here?
+        value_template: '{{is_state("script.my_thing", "on")}}'
