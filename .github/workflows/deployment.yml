@@ -8,9 +8,14 @@
 name: Deploy
 
 on:
-  workflow_run: # Only run this if linting and testing pass
-    workflows: [Lint, Check] # Necessary checks
-    types: [completed] # Only run when the checks have completed
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: false
+        default: 'warning'
+      tags:
+        description: 'Test tags'
 
 jobs:
   on-success:
