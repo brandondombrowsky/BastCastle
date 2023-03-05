@@ -28,7 +28,14 @@ jobs:
           remote_host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com # todo: make a repo variable?
           remote_user: ubuntu
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
-    
+      - name: Restart Home Assistant
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com # todo: make a repo variable?
+          username: ubuntu
+          key: "${{ secrets.SSH_PRIVATE_KEY }}"
+          script: sudo docker restart homeassistant
+   
   on-failure:    
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
