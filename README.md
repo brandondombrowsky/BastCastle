@@ -11,8 +11,6 @@ Our four primary objectives
 
 Use our work as a foundation to build out your own home automation by adding additional use cases. At this point, in the world of home automation IoT, the sky is the limit: lights, locks, solar panels, televisions, alarms, cameras, vents, curtains, blinds, switches, sprinklers, etc.
 
-### TBD if you want to be featured ---> ToDo
-
 ## Getting Started
 Though most configuration sources found online highly recommend running HA on a local server (Raspberry Pi), our assignment was to deploy to a cloud service. As such, our CI/CD implementation is optimized for the cloud and automatically deploying repository changes to our AWS EC2 instance.
 
@@ -20,9 +18,9 @@ Though most configuration sources found online highly recommend running HA on a 
 
 ## Installation 
 1. Install HA locally. Though there are many ways to do this, these are the ones we found helpful:
-    - Windows system was [here](https://www.youtube.com/watch?v=dp-0hVjEo6A). 
-    - Mac ---> ToDo [here]. 
-    - Linux [here](https://github.com/brandondombrowsky/BastCastle/wiki/Wireguard-VPN-Setup#install-docker) 
+    - [Windows](https://www.youtube.com/watch?v=dp-0hVjEo6A). 
+    - [Mac](https://www.youtube.com/watch?v=992jdYGeKRw&t=77s) 
+    - [Linux](https://github.com/brandondombrowsky/BastCastle/wiki/Wireguard-VPN-Setup#install-docker) 
 2. HA will scan for and find most of your devices. For those devices it doesn't find, use the search tool to locate.
 3. Fork the BastCastle repository or copy in the files you need. At a minimum, your configuration should include a .github/workflows and homeassistant.config folder, as a .gitignore file. ---> ToDo Alexi take a look at this
     - From the .github/workflows folder, copy in a minimum of the home-assistant.yml and yamllint.yml file
@@ -34,5 +32,5 @@ Though most configuration sources found online highly recommend running HA on a 
     - Check out a few videos of our chose products [Wiki Home](https://github.com/brandondombrowsky/BastCastle/wiki)
 
 ### Checkout the Wiki page for more information. 
-- [Home](https://github.com/brandondombrowsky/BastCastle/wiki) - Documention, products, and how the products work.
+- [Home](https://github.com/brandondombrowsky/BastCastle/wiki) - Documention, videos, and products and how they work.
 - [Wireguard VPN Setup](https://github.com/brandondombrowsky/BastCastle/wiki/Wireguard-VPN-Setup) - The nitty gritty of setting up your environment.
