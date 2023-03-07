@@ -23,12 +23,45 @@ http:
 google_assistant: !include google_assistant_integration.yaml
 
 # Allow Scenes/Scripts/Automations to show up in Google
+#   ToDo: make this an !include file(?)
 switch:
   - platform: template
     switches:
+      # Allow 'my_thing' script
       script_my_thing:
+        friendly_name: "Alexi test script"
         turn_on:
           service: script.my_thing
         turn_off:
           service: script.my_thing # something different here?
+        # Check if this is necessary
         value_template: '{{is_state("script.my_thing", "on")}}'
+      # Allow 'spring' scene
+      scene_make_lights_spring:
+        friendly_name: "Make Alexi's lights green"
+        turn_on:
+          service: scene.turn_on
+          entity_id: scene.make_lights_spring
+        turn_off:
+          service: scene.turn_off # video has this as on?
+          entity_id: scene.make_lights_spring
+      # Allow 'lights off' scene
+      scene_all_lights_off:
+        friendly_name: "Turn Alexi's lights off"
+        turn_on:
+          service: scene.turn_on
+          entity_id: scene.all_lights_off
+        turn_off:
+          service: scene.turn_off # video has this as on?
+          entity_id: scene.all_lights_off
+      # Allow 'lights flash at 9am' automation
+      automation_flash_lights_at_9am:
+        friendly_name: "Flash the lights at 9am"
+        turn_on:
+          service: automation.turn_on
+          entity_id: automation.flash_lights_at_9am
+        turn_off:
+          service: automation.turn_ff
+          entity_id: automation.flash_lights_at_9am
+        # Check if this is necessary
+        value_template: '{{is_state("automation.flash_lights_at_9am", "on")}}'
