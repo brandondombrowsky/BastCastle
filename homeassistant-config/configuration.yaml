@@ -42,7 +42,7 @@ switch:
           entity_id: scene.make_lights_spring
         turn_off:
           service: scene.turn_off # video has this as on?
-          entity_id: scene.make_lights_spring  
+          entity_id: scene.make_lights_spring
       # Allow 'lights off' scene
       scene_all_lights_off:
         turn_on:
@@ -58,6 +58,6 @@ switch:
           entity_id: automation.flash_lights_at_9am
         turn_off:
           service: automation.turn_ff
-          entity_id: automation.flash_lights_at_9am  
+          entity_id: automation.flash_lights_at_9am
         # Check if this is necessary
         value_template: '{{is_state("automation.flash_lights_at_9am", "on")}}'
