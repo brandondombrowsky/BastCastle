@@ -29,6 +29,7 @@ switch:
     switches:
       # Allow 'my_thing' script
       script_my_thing:
+        friendly_name: "Alexi test script"
         turn_on:
           service: script.my_thing
         turn_off:
@@ -37,6 +38,7 @@ switch:
         value_template: '{{is_state("script.my_thing", "on")}}'
       # Allow 'spring' scene
       scene_make_lights_spring:
+        friendly_name: "Make Alexi's lights green"
         turn_on:
           service: scene.turn_on
           entity_id: scene.make_lights_spring
@@ -45,6 +47,7 @@ switch:
           entity_id: scene.make_lights_spring
       # Allow 'lights off' scene
       scene_all_lights_off:
+        friendly_name: "Turn Alexi's lights off"
         turn_on:
           service: scene.turn_on
           entity_id: scene.all_lights_off
@@ -53,6 +56,7 @@ switch:
           entity_id: scene.all_lights_off
       # Allow 'lights flash at 9am' automation
       automation_flash_lights_at_9am:
+        friendly_name: "Flash the lights at 9am"
         turn_on:
           service: automation.turn_on
           entity_id: automation.flash_lights_at_9am
