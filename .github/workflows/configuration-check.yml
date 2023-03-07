@@ -2,7 +2,7 @@ name: Check
 on: [push, pull_request]
 jobs:
   home-assistant:
-    name: Home Assistant Core Configuration Check
+    name: Home Assistant Configuration Check
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out configuration from GitHub
