@@ -22,7 +22,7 @@ Though most configuration sources found online highly recommend running HA on a 
 - Required Equipment
   - [Raspberry Pi](https://www.adafruit.com/product/4295) - running Ubunutu or similar
   - [Kasa Smart Strip Plug](https://www.amazon.com/TP-LINK-HS103P2-Required-Google-Assistant/dp/B07B8W2KHZ?ref_=ast_sto_dp&th=1&psc=1)
-  - [Motorized Damper](https://suncourt.com/collections/automated-airflow-control-dampers/products/zonemaster-adjustable-motorized-damper-zo206)
+  - [Motorized Damper](https://suncourt.com/collections/automated-airflow-control-dampers)
   - [Yale Smart Lock](https://store.google.com/product/nest_x_yale_lock?hl=en-US)
   - [ZemiSmart Curtain Motor with Track](https://www.zemismart.com/products/-bcm500ds-tyw)
 - Required Accounts
