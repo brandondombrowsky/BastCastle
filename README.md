@@ -164,6 +164,9 @@ Though most configuration sources found online highly recommend running HA on a 
 ### Securing Devices in Home Assistant
 Home Assistant has some wonderful (and simple) settings for securing device access. Take a look at some of them [here](https://github.com/brandondombrowsky/BastCastle/wiki/Editing-User-Permissions-in-Home-Assistant).
 
+### Google Integration
+Home Assistant is compatible with Google Home/Assistant. This can be configured both ways: HA can be integrated into GH/A so that HA scripts can be run from GH/A and HA can send command requests to GH/A. Take a look at how this process works [here](https://github.com/brandondombrowsky/BastCastle/wiki/Google-Integration).
+
 ### Checkout the Wiki page for more information. 
 - [Home](https://github.com/brandondombrowsky/BastCastle/wiki) - Documention, videos, and products and how they work.
 - [Wireguard VPN Setup](https://github.com/brandondombrowsky/BastCastle/wiki/Wireguard-VPN-Setup) - The nitty gritty of setting up your environment.
