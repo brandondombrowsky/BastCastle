@@ -30,8 +30,8 @@ Though most configuration sources found online highly recommend running HA on a 
   - [Google Assistant](https://www.google.com/)
   - [Duck DNS](https://www.duckdns.org/)
 - We also reccomend downloading `[this sheet]()` `What?` for storing all information you will be copying and/or pasting in this process, and inputing the following information:
-  - <pi IP> `What?`
-  - <network IP> `What?`
+  - `<pi IP>` `What?`
+  - `<network IP>` `What?`
 
 ### Deploying Home Assistant
 
@@ -44,6 +44,10 @@ Though most configuration sources found online highly recommend running HA on a 
 6. Keeping the first security rule, add a second rule allowing custom TCP access to port :8123 from anywhere. `Is this correct? -> port_space_colon_portnumber`
 7. Launch instance. On the following page, click 'connect to instance.' On this page, record the listed public IP as <HA IP>. `What?`
 
+![reference images](https://user-images.githubusercontent.com/73506948/224200068-04333ce1-e1dc-40ca-9b6d-50fd592f063b.png)
+
+  
+  
 #### Instance Setup
 8. Open the terminal locally. Navigate to the folder containing your key.
 9.  Change the file permissions for the key using command `sudo chmod 600 <key name>`. 
@@ -53,6 +57,9 @@ Though most configuration sources found online highly recommend running HA on a 
     - `sudo apt upgrade` 
     - `sudo reboot` 
 
+  ![reference images](https://user-images.githubusercontent.com/73506948/224200230-66b19bba-64e7-4679-96cd-018e800e2b7e.png)
+
+  
 #### Testing
 12.  Open your favorite web browser and navigate to <HA IP>:8123. You should be greeted by the Home Assistant login page. `What?` 
 13.  Login using the credentials below:
@@ -79,6 +86,7 @@ Though most configuration sources found online highly recommend running HA on a 
    - External port :58133 `Is this correct? -> port_space_colon_portnumber`
    - Internal port :58133 `Is this correct? -> port_space_colon_portnumber`
    - Internal IP: <pi IP> `What?`
+![router-ports](https://user-images.githubusercontent.com/38815390/224203819-95a9e31a-d55e-4864-a985-0aa4be1deb38.png)
 
 
   - Blue: local server (Pi) IP address
@@ -107,6 +115,10 @@ Though most configuration sources found online highly recommend running HA on a 
 15. View public key by running `cat wg-pi.pub`.
    - Record as <pi public key> `What?`
 
+![reference images](https://user-images.githubusercontent.com/73506948/224200404-9e979abe-7b9f-4bdf-a6fb-58a1e157f2b4.png)
+
+
+
 #### EC2 tunnel configuration
 16. On your local machine, scroll to the section labelled <ec2 config> towards the bottom of the clipboard file. `What?`
 17. Replace <ec2 private key>, <pi public key>, <network IP>, and <pi IP> with the corresponding recorded information. For any smartplugs used, add the <device IP>/32 to the allowedIPs list at the bottom (with each IP separated by a comma). `What?`
@@ -121,6 +133,9 @@ Though most configuration sources found online highly recommend running HA on a 
     -  `sudo vim /etc/wireguard/HA-tunnel.conf`
 23. Copy your edited <pi config> text into the new document and save. `What?`
 
+![reference images](https://user-images.githubusercontent.com/73506948/224200508-f7cfadcd-e5b8-4a41-aebd-5cf8a9777132.png)
+
+  
 #### Tunnel Startup
 24. In your Pi terminal, start the tunnel with the following command:
     - `sudo wg-quick up HA-tunnel`

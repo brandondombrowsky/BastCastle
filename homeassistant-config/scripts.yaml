@@ -24,3 +24,11 @@ my_thing:
     domain: light
   mode: single
   icon: mdi:alarm-light
+secure_my_home:
+  alias: Secure my home
+  sequence:
+  - service: google_assistant_sdk.send_text_command
+    data:
+      command: lock my door
+  mode: single
+  icon: mdi:home-lock
