@@ -86,9 +86,8 @@ Though most configuration sources found online highly recommend running HA on a 
    - External port :58133 `Is this correct? -> port_space_colon_portnumber`
    - Internal port :58133 `Is this correct? -> port_space_colon_portnumber`
    - Internal IP: <pi IP> `What?`
+##### Example Configuration on TPLink Router
 ![router-ports](https://user-images.githubusercontent.com/38815390/224203819-95a9e31a-d55e-4864-a985-0aa4be1deb38.png)
-
-
   - Blue: local server (Pi) IP address
   - Red: Wireguard tunnel port
 #### EC2 Wireguard setup
@@ -148,6 +147,8 @@ Though most configuration sources found online highly recommend running HA on a 
 27. After a few seconds, press ctrl + c.
 28. If packets have "no packets have successfully transmitted," check the troubleshooting section. `Is this edit correct?`
 
+`--- todo: duckdns + https ---`
+
 ### Connecting devices to Home Assistant
 
 #### Kasa Smart Strip Plug for Damper Control
@@ -158,6 +159,9 @@ Though most configuration sources found online highly recommend running HA on a 
 5. Type 'kasa' into the search bar and select TP-Link Kasa Smart.
 6. Paste <device id> of your smart plug and click submit. `What?`
 7. Repeat 4-6 times for each additional plug.
+
+### Securing Devices in Home Assistant
+Home Assistant has some wonderful (and simple) settings for securing device access. Take a look at some of them [here](https://github.com/brandondombrowsky/BastCastle/wiki/Editing-User-Permissions-in-Home-Assistant).
 
 ### Checkout the Wiki page for more information. 
 - [Home](https://github.com/brandondombrowsky/BastCastle/wiki) - Documention, videos, and products and how they work.
