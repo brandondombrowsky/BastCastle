@@ -87,6 +87,7 @@ Though most configuration sources found online highly recommend running HA on a 
    - External port :58133 `Is this correct? -> port_space_colon_portnumber`
    - Internal port :58133 `Is this correct? -> port_space_colon_portnumber`
    - Internal IP: <pi IP> `What?`
+![router-ports](https://user-images.githubusercontent.com/38815390/224203819-95a9e31a-d55e-4864-a985-0aa4be1deb38.png)
 
 #### EC2 Wireguard setup
 2. Open terminal and navigate to location of the pem key.
