@@ -37,12 +37,12 @@ Though most configuration sources found online highly recommend running HA on a 
 
 #### Instance Launch
 1. Log into [AWS Dashboard](https://aws.amazon.com/). Select EC2 from the services menu and click launch new instance.
-2. Select and record <instance name>.
+2. Select and record `<instance name>`.
 3. Select the 'My AMIs' tab, click 'Shared With Me' and choose 'HA_AwsUbuntuDocker'.
-4. Create and save new pem key, noting <key name> and <key location>.
-5. Create new security group, record <sg name>.
+4. Create and save new pem key, noting `<key name>` and `<key location>`.
+5. Create new security group, record `<sg name>`.
 6. Keeping the first security rule, add a second rule allowing custom TCP access to port :8123 from anywhere.
-7. Launch instance. On the following page, click 'connect to instance.' On this page, record the listed public IP as <HA IP>.
+7. Launch instance. On the following page, click 'connect to instance.' On this page, record the listed public IP as `<HA IP>`.
 
 ![reference images](https://user-images.githubusercontent.com/73506948/224200068-04333ce1-e1dc-40ca-9b6d-50fd592f063b.png)
 
@@ -51,7 +51,7 @@ Though most configuration sources found online highly recommend running HA on a 
 #### Instance Setup
 8. Open the terminal locally. Navigate to the folder containing your key.
 9.  Change the file permissions for the key using command `sudo chmod 600 <key name>`. 
-10. Access the EC2's terminal with command `ssh -i <key name> ubuntu@<HA IP>`.
+10. Access the EC2's terminal with command `ssh -i `<key name> ubuntu@<HA IP>`.
 11. Run the following 3 commands in succession:
     - `sudo apt update`  
     - `sudo apt upgrade` 
@@ -61,17 +61,17 @@ Though most configuration sources found online highly recommend running HA on a 
 
   
 #### Testing
-12.  Open your favorite web browser and navigate to <HA IP>:8123. You should be greeted by the Home Assistant login page.
+12.  Open your favorite web browser and navigate to `<HA IP>`:8123. You should be greeted by the Home Assistant login page.
 13.  Login using the credentials below:
     - user: admin
     - password: homeautomation
-14. Change the login information to your liking, recording <HA user> & <HA password>.
+14. Change the login information to your liking, recording `<HA user>` & `<HA password>`.
 
 ### Connecting Smart Devices to Local Network
 
 #### Kasa Smart Plug Strip
 1. Use instructions provided by manufacturer.
-2. Navigate the mobile app to the device information page and record the <plug IP>.
+2. Navigate the mobile app to the device information page and record the `<plug IP>`.
 
 #### Yale Smart Lock
 `Add something here?`
@@ -87,7 +87,7 @@ Though most configuration sources found online highly recommend running HA on a 
 ##### Example Configuration on TPLink Router
    - External port :58133 
    - Internal port :58133 
-   - Internal IP: <pi IP> 
+   - Internal IP: `<pi IP>` 
 ![router-ports](https://user-images.githubusercontent.com/38815390/224203819-95a9e31a-d55e-4864-a985-0aa4be1deb38.png)
   - Blue: local server (Pi) IP address
   - Red: Wireguard tunnel port
@@ -98,9 +98,9 @@ Though most configuration sources found online highly recommend running HA on a 
 5. Create private key by running `wg genkey > wg-aws.key`.
 6. Create public key by running `wg pubkey < wg-aws.key > wg-aws.pub`.
 7. View private key by running `cat wg-aws.key`.
-   - Record as <aws private key>
+   - Record as `<aws private key>`
 8. View public key by running `cat wg-aws.pub`.
-   - Record as <aws public key>
+   - Record as `<aws public key>`
 9. Open a new terminal window locally. Do not close the terminal window connected to the aws instance.
 
 `--- todo: EC2 instance security rules (image; awaiting final "prod" changes to instance) ---`
@@ -111,9 +111,9 @@ Though most configuration sources found online highly recommend running HA on a 
 12. Create private key by running `wg genkey > wg-pi.key`.
 13. Create public key by running `wg pubkey < wg-pi.key > wg-pi.pub`.
 14. View private key by running `cat wg-pi.key`.
-   - Record as <pi private key>
+   - Record as `<pi private key>`
 15. View public key by running `cat wg-pi.pub`.
-   - Record as <pi public key>
+   - Record as `<pi public key>`
 
 ![reference images](https://user-images.githubusercontent.com/73506948/224200404-9e979abe-7b9f-4bdf-a6fb-58a1e157f2b4.png)
 
@@ -121,17 +121,17 @@ Though most configuration sources found online highly recommend running HA on a 
 
 #### EC2 tunnel configuration
 16. On your local machine, scroll to the section labelled <ec2 config> towards the bottom of the clipboard file.
-17. Replace <ec2 private key>, <pi public key>, <network IP>, and <pi IP> with the corresponding recorded information. For any smartplugs used, add the <device IP>/32 to the allowedIPs list at the bottom (with each IP separated by a comma).
+17. Replace <ec2 private key>, `<pi public key>`, `<network IP>`, and `<pi IP>` with the corresponding recorded information. For any smartplugs used, add the <device IP>/32 to the allowedIPs list at the bottom (with each IP separated by a comma).
 18. In your EC2 instance terminal, use your preferred text editor to create and edit a new Wireguard configuration file. Simply insert your favorite text editor in the place of 'vim' below.
     -  `sudo vim /etc/wireguard/HA-tunnel.conf`
-19. Copy your edited <ec2config> text into the new document and save.
+19. Copy your edited `<ec2config>` text into the new document and save.
 
 #### Pi tunnel setup
-20.  On your local machine, scroll to the section labelled <pi config> towards the bottom of the clipboard file.
-21. Replace <pi private key> and <ec2 public key> with the corresponding recorded information.
+20.  On your local machine, scroll to the section labelled `<pi config>` towards the bottom of the clipboard file.
+21. Replace `<pi private key>` and `<ec2 public key>` with the corresponding recorded information.
 22. In your Pi terminal, use your preferred text editor to create and edit a new Wireguard configuration file. Simply insert your favorite text editor in the place of 'vim' below.
     -  `sudo vim /etc/wireguard/HA-tunnel.conf`
-23. Copy your edited <pi config> text into the new document and save.
+23. Copy your edited `<pi config>` text into the new document and save.
 
 ![reference images](https://user-images.githubusercontent.com/73506948/224200508-f7cfadcd-e5b8-4a41-aebd-5cf8a9777132.png)
 
@@ -153,12 +153,12 @@ Though most configuration sources found online highly recommend running HA on a 
 ### Connecting devices to Home Assistant
 
 #### Kasa Smart Strip Plug for Damper Control
-1. Navigate to Home Assistant dashboard at <HA IP>:8123. 
-2. Login using <HA user> & <HA password>.
+1. Navigate to Home Assistant dashboard at `<HA IP>`:8123. 
+2. Login using `<HA user>` & `<HA password>`.
 3. In the dashboard click Settings -> Devices and Integrations. 
 4. Click "Add Integration." 
 5. Type 'kasa' into the search bar and select TP-Link Kasa Smart.
-6. Paste <device id> of your smart plug and click submit.
+6. Paste `<device id>` of your smart plug and click submit.
 7. Repeat 4-6 times for each additional plug.
 
 ### Securing Devices in Home Assistant
