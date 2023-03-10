@@ -6,7 +6,7 @@ As a part of a cloud computing practicum, a team of six came together to build a
 Our four primary objectives:
 - Create a HA server deployed via docker in the cloud. 
 - Implement smart curtains to use with blackout curtains. 
-- Devise a solution for a smart central AC/HVAC system. 
+- Devise a solution for a smart central HVAC system to control airflow to different zones. 
 - Integrate with Google so client can use Google Assistant to invoke voice command, including running HA routines (e.g. "Go to bed," which checks front state and locks if needed, does nothing if locked).
 
 Use our work as a foundation to build out your own home automation by adding additional use cases. At this point, in the world of home automation IoT, the sky is the limit: lights, locks, solar panels, televisions, alarms, cameras, vents, curtains, blinds, switches, sprinklers, so on and so forth.
@@ -22,7 +22,7 @@ Though most configuration sources found online highly recommend running HA on a 
 - Required Equipment
   - [Raspberry Pi](https://www.adafruit.com/product/4295) - running Ubunutu or similar
   - [Kasa Smart Strip Plug](https://www.amazon.com/TP-LINK-HS103P2-Required-Google-Assistant/dp/B07B8W2KHZ?ref_=ast_sto_dp&th=1&psc=1)
-  - [Vent Damper](https://m.supplyworks.com/#/sku/311744680)
+  - [Motorized Damper](https://suncourt.com/collections/automated-airflow-control-dampers)
   - [Yale Smart Lock](https://store.google.com/product/nest_x_yale_lock?hl=en-US)
   - [ZemiSmart Curtain Motor with Track](https://www.zemismart.com/products/-bcm500ds-tyw)
 - Required Accounts
