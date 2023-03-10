@@ -12,9 +12,8 @@ Our four primary objectives:
 Use our work as a foundation to build out your own home automation by adding additional use cases. At this point, in the world of home automation IoT, the sky is the limit: lights, locks, solar panels, televisions, alarms, cameras, vents, curtains, blinds, switches, sprinklers, so on and so forth.
 
 ## Getting Started
-Though most configuration sources found online highly recommend running HA on a local server (Raspberry Pi), our assignment was to deploy to a cloud service. As such, our CI/CD implementation is optimized for the cloud and automatically deploying repository changes to our AWS EC2 instance.
+Though most configuration sources found online highly recommend running HA on a local server (Raspberry Pi; take a look at [this](https://community.home-assistant.io/t/home-assistant-in-the-cloud/436220/2) thread for an explanation as to why), our assignment was to deploy to a cloud service. As such, our CI/CD implementation is optimized for the cloud and automatically deploys repository changes to our AWS EC2 instance.
 
-`---> ToDo: find explanatory link *******************************`
 
 ## Installation
 
@@ -84,11 +83,14 @@ Though most configuration sources found online highly recommend running HA on a 
 
 #### Router settings
 1. Open your router settings and set port forwarding. This process will vary by router, but these are the important settings:
+
+##### Example Configuration on TPLink Router
    - External port :58133 
    - Internal port :58133 
    - Internal IP: <pi IP> 
 ![router-ports](https://user-images.githubusercontent.com/38815390/224203819-95a9e31a-d55e-4864-a985-0aa4be1deb38.png)
-
+  - Blue: local server (Pi) IP address
+  - Red: Wireguard tunnel port
 #### EC2 Wireguard setup
 2. Open terminal and navigate to location of the pem key.
 3. Access the EC2's terminal with command `ssh -i <key name> ubuntu@<HA IP>`.
@@ -100,6 +102,8 @@ Though most configuration sources found online highly recommend running HA on a 
 8. View public key by running `cat wg-aws.pub`.
    - Record as <aws public key>
 9. Open a new terminal window locally. Do not close the terminal window connected to the aws instance.
+
+`--- todo: EC2 instance security rules (image; awaiting final "prod" changes to instance) ---`
 
 #### Pi Wireguard setup
 10. In the new terminal window, connect to the local Pi device using the command `ssh <pi username>@<pi local IP>` and entering the device password.
@@ -144,6 +148,8 @@ Though most configuration sources found online highly recommend running HA on a 
 27. After a few seconds, press ctrl + c.
 28. If packets have "no packets have successfully transmitted," check the troubleshooting section. 
 
+`--- todo: duckdns + https ---`
+
 ### Connecting devices to Home Assistant
 
 #### Kasa Smart Strip Plug for Damper Control
@@ -154,6 +160,9 @@ Though most configuration sources found online highly recommend running HA on a 
 5. Type 'kasa' into the search bar and select TP-Link Kasa Smart.
 6. Paste <device id> of your smart plug and click submit.
 7. Repeat 4-6 times for each additional plug.
+
+### Securing Devices in Home Assistant
+Home Assistant has some wonderful (and simple) settings for securing device access. Take a look at some of them [here](https://github.com/brandondombrowsky/BastCastle/wiki/Editing-User-Permissions-in-Home-Assistant).
 
 ### Checkout the Wiki page for more information. 
 - [Home](https://github.com/brandondombrowsky/BastCastle/wiki) - Documention, videos, and products and how they work.
