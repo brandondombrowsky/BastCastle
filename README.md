@@ -148,8 +148,6 @@ Though most configuration sources found online highly recommend running HA on a 
 27. After a few seconds, press ctrl + c.
 28. If packets have "no packets have successfully transmitted," check the troubleshooting section. 
 
-`--- todo: duckdns + https ---`
-
 ### Connecting devices to Home Assistant
 
 #### Kasa Smart Strip Plug for Damper Control
