@@ -93,21 +93,21 @@
   condition: []
   action:
     - choose:
-        - conditions:
-            - condition: trigger
-              id: time
-          sequence:
-            - service: google_assistant_sdk.send_text_command
-              data:
-                command: Is my front door locked
-        - conditions:
-            - condition: trigger
-              id: status
-          sequence:
-            - service: input_text.set_value
-              data:
-                value: "{{ trigger.event.data.response }}"
-              target:
-                entity_id: input_text.lock_status
+      - conditions:
+          - condition: trigger
+            id: time
+        sequence:
+          - service: google_assistant_sdk.send_text_command
+            data:
+              command: Is my front door locked
+      - conditions:
+          - condition: trigger
+            id: status
+        sequence:
+          - service: input_text.set_value
+            data:
+              value: "{{ trigger.event.data.response }}"
+            target:
+              entity_id: input_text.lock_status
   mode: queued
   max: 10
