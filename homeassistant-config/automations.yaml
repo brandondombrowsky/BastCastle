@@ -76,3 +76,38 @@
     entity_id: switch.power_strip_6_damper_2
     domain: switch
   mode: single
+
+# Nice looking lock buttons in dashboard
+- id: '1678386842095'
+  alias: "Lock: status"
+  description: ""
+  trigger:
+  - platform: time_pattern
+    seconds: 10
+    id: time
+  - platform: event
+    event_type: google_assistant_sdk_custom_event
+    event_data:
+      request: Is my front door locked
+    id: status
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: time
+      sequence:
+      - service: google_assistant_sdk.send_text_command
+        data:
+          command: Is my front door locked
+    - conditions:
+      - condition: trigger
+        id: status
+      sequence:
+      - service: input_text.set_value
+        data:
+          value: "{{ trigger.event.data.response }}"
+        target:
+          entity_id: input_text.lock_status
+  mode: queued
+  max: 10
