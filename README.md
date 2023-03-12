@@ -1,5 +1,6 @@
 # Home Automation Using Home Assistant
 
+
 ## Building Out Home Automation
 As a part of a cloud computing practicum, a team of six came together to build a home automation process using Home Assistant (HA) for three specific use cases: locks, curtains, and ventilation. We started testing with lights, so we kept those scripts in the repo for fun. 
 
