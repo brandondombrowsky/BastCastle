@@ -27,6 +27,8 @@ Though most configuration sources found online highly recommend running HA on a 
 - Required Accounts
   - [AWS Cloud Services](https://aws.amazon.com/)
   - tplink Kasa (mobile application account) `What is this? Doesn't follow format.`
+  - Tuya Mobile App
+  - Tuya Iot Platform
   - [Google Assistant](https://www.google.com/)
   - [Duck DNS](https://www.duckdns.org/)
 - We also reccomend downloading `[this sheet]()` `What?` for storing all information you will be copying and/or pasting in this process, and inputing the following information:
@@ -158,6 +160,30 @@ Though most configuration sources found online highly recommend running HA on a 
 5. Type 'kasa' into the search bar and select TP-Link Kasa Smart.
 6. Paste `<device id>` of your smart plug and click submit.
 7. Repeat 4-6 times for each additional plug.
+
+
+#### ZemiSmart Curtains
+1. Log into Tuya IoT platform account. Select "Cloud" from left toolbar and click "Create Cloud Project" on the following screen.
+2. Fil in the Create Cloud Project form as follows:
+    `Project Name: Home Assistant`
+    `Description: optional`
+    `Industry: Smart Home`
+    `Development Method: Smart Home`
+    `Data Center: Western America Data Center`
+3. Click "Create" button. Skip the configuration wizard and click Authorize.
+4. Record `<Access ID>`, `<Access Secret>`, and `<Project Code>`
+5. Navigate to the "Devices" tab. Select "Link Tuya App Account" and click "Add App Account." A barcode should appear.
+6. Open the Tuya App on your mobile device. Click the "Me" tab on the bottom navigation bar and the barcode scan button on the resulting page
+7. Scan the barcode from step 5. A dialoue box will replace the barcode. Set "Device Linking Method" to Automatic Linking and "Device Permission"  to Read, write, and Manage. Press "OK"
+8. Wait a moment. When the product name appears listed under devices, you will now the process has been successful.
+9. Navigate to Home Assistant dashboard at `<HA IP>`:8123. 
+10. Login using `<HA user>` & `<HA password>`.
+11. In the dashboard click Settings -> Devices and Integrations. 
+12. Click "Add Integration." 
+13. Type 'tuya' into the search bar and select Tuya.
+14. Paste `<Access ID>` and `<Access Secret>` of your curtains as well as your Tuya Mobile App login credentials. Click submit. Be patient, registration may take up to a minute.
+15. Select the proper area for your curtains.
+    
 
 ### Google Integration
 Home Assistant is compatible with Google Home/Assistant. This can be configured both ways: HA can be integrated into GH/A so that HA scripts can be run from GH/A and HA can send command requests to GH/A. Take a look at how this process works [here](https://github.com/brandondombrowsky/BastCastle/wiki/Google-Integration).
