@@ -104,7 +104,7 @@
       data:
         message: All dampers closed, Zone 1 opened.
       enabled: true
-    - service: notify.notify                       
+    - service: notify.notify
       data:
         message: All dampers closed, Zone 1 opened.
         title: ALL ZONES CLOSED
