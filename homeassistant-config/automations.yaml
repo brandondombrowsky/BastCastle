@@ -76,6 +76,40 @@
     entity_id: switch.power_strip_6_damper_2
     domain: switch
   mode: single
+- id: '1678346908526'                            
+  alias: Damper Check                            
+  description: ''                                
+  trigger:                                       
+  - platform: time_pattern                       
+    seconds: /5                                  
+  condition:                                     
+  - condition: and                               
+    conditions:                                  
+    - condition: device                          
+      type: is_on                                
+      device_id: 1364da321d3de70822f1e83d8b98a230
+      entity_id: switch.damper1                  
+      domain: switch                             
+    - condition: device                          
+      type: is_on                                
+      device_id: c057db5d5f5bd848ffec669ea8ea1e13
+      entity_id: switch.damper2                  
+      domain: switch       
+    action:                                        
+    - type: turn_off                               
+      device_id: 1364da321d3de70822f1e83d8b98a230  
+      entity_id: switch.damper1                    
+      domain: switch                               
+    - service: persistent_notification.create      
+      data:                                        
+        message: All dampers active, Zone 1 opened.
+      enabled: true                                
+    - service: notify.notify                       
+      data:                                        
+        message: All dampers closed, Zone 1 opened.
+        title: ALL ZONES CLOSED                    
+      enabled: false                               
+  mode: single     
 
 # Nice looking lock buttons in dashboard
 - id: '1678386842095'
