@@ -76,21 +76,21 @@
     entity_id: switch.power_strip_6_damper_2
     domain: switch
   mode: single
-- id: '1678346908526'                            
-  alias: Damper Check                            
-  description: ''                                
-  trigger:                                       
-  - platform: time_pattern                       
-    seconds: /5                                  
-  condition:                                     
-  - condition: and                               
-    conditions:                                  
-    - condition: device                          
-      type: is_on                                
+- id: '1678346908526'
+  alias: Damper Check
+  description: ''
+  trigger:                                
+  - platform: time_pattern
+    seconds: /5
+  condition:
+  - condition: and
+    conditions:
+    - condition: device
+      type: is_on
       device_id: 1364da321d3de70822f1e83d8b98a230
-      entity_id: switch.damper1                  
-      domain: switch                             
-    - condition: device                          
+      entity_id: switch.damper1
+      domain: switch
+    - condition: device
       type: is_on                                
       device_id: c057db5d5f5bd848ffec669ea8ea1e13
       entity_id: switch.damper2                  
