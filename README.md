@@ -65,6 +65,18 @@ Though most configuration sources found online highly recommend running HA on a 
     - password: homeautomation
 14. Change the login information to your liking, recording `<HA user>` & `<HA password>`.
 
+### Connecting Smart Devices to Local Network
+
+#### Kasa Smart Plug Strip
+1. Use instructions provided by manufacturer.
+2. Navigate the mobile app to the device information page and record the `<plug IP>`.
+
+#### Yale Smart Lock
+`Add something here?`
+
+#### ZemiSmart Curtain Motor with Track
+`Add something here?`
+
 ### Configure Wireguard VPN Tunnel
 
 #### Router Settings
