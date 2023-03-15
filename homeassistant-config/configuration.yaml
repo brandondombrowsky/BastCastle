@@ -36,3 +36,11 @@ switch:
           service: script.secure_my_home # something different here?
         # Check if this is necessary
         value_template: '{{is_state("script.secure_my_home", "on")}}'
+        # Allow door lock script
+      script_lock_demo:
+        friendly_name: "Lock demo"
+        turn_on:
+          service: script.lock_demo
+        turn_off:
+          service: script.lock_demo # something different here?        # Check if this is necessary
+        value_template: '{{is_state("script.lock_demo", "on")}}'
