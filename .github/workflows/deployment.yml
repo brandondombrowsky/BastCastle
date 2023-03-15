@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to EC2 instance
-        if: github.ref == 'refs/heads/main' # Only run on main branch
+        if: github.ref == 'main' # Only run on main branch
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --delete
