@@ -29,7 +29,7 @@ secure_my_home:
   sequence:
   - service: google_assistant_sdk.send_text_command
     data:
-      command: lock my door
+      command: lock my doors
   mode: single
   icon: mdi:home-lock
 lock_demo:
