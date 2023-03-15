@@ -14,7 +14,6 @@ Use our work as a foundation to build out your own home automation by adding add
 ## Getting Started
 Though most configuration sources found online highly recommend running HA on a local server (Raspberry Pi; take a look at [this](https://community.home-assistant.io/t/home-assistant-in-the-cloud/436220/2) thread for an explanation as to why), our assignment was to deploy to a cloud service. As such, our CI/CD implementation is optimized for the cloud and automatically deploys repository changes to our AWS EC2 instance.
 
-
 ## Installation
 
 ### Prep
@@ -48,8 +47,6 @@ Though most configuration sources found online highly recommend running HA on a 
 
 ![reference images](https://user-images.githubusercontent.com/73506948/224200068-04333ce1-e1dc-40ca-9b6d-50fd592f063b.png)
 
-  
-  
 #### Instance Setup
 8. Open the terminal locally. Navigate to the folder containing your key.
 9.  Change the file permissions for the key using command `sudo chmod 600 <key name>`. 
@@ -59,9 +56,8 @@ Though most configuration sources found online highly recommend running HA on a 
     - `sudo apt upgrade` 
     - `sudo reboot` 
 
-  ![reference images](https://user-images.githubusercontent.com/73506948/224200230-66b19bba-64e7-4679-96cd-018e800e2b7e.png)
+![reference images](https://user-images.githubusercontent.com/73506948/224200230-66b19bba-64e7-4679-96cd-018e800e2b7e.png)
 
-  
 #### Testing
 12.  Open your favorite web browser and navigate to `<HA IP>`:8123. You should be greeted by the Home Assistant login page.
 13.  Login using the credentials below:
@@ -83,17 +79,17 @@ Though most configuration sources found online highly recommend running HA on a 
 
 ### Configure Wireguard VPN Tunnel
 
-#### Router settings
+#### Router Settings
 1. Open your router settings and set port forwarding. This process will vary by router, but these are the important settings:
 
-##### Example Configuration on TPLink Router
+##### Example Configuration On TPLink Router
    - External port :58133 
    - Internal port :58133 
    - Internal IP: `<pi IP>` 
 ![router-ports](https://user-images.githubusercontent.com/38815390/224203819-95a9e31a-d55e-4864-a985-0aa4be1deb38.png)
   - Blue: local server (Pi) IP address
   - Red: Wireguard tunnel port
-#### EC2 Wireguard setup
+#### EC2 Wireguard Setup
 2. Open terminal and navigate to location of the pem key.
 3. Access the EC2's terminal with command `ssh -i <key name> ubuntu@<HA IP>`.
 4. Install Wireguard using the command `sudo apt install wireguard`.
@@ -107,7 +103,7 @@ Though most configuration sources found online highly recommend running HA on a 
 
 `--- todo: EC2 instance security rules (image; awaiting final "prod" changes to instance) ---`
 
-#### Pi Wireguard setup
+#### Pi Wireguard Setup
 10. In the new terminal window, connect to the local Pi device using the command `ssh <pi username>@<pi local IP>` and entering the device password.
 11. Install Wireguard using the command `sudo apt install wireguard`.
 12. Create private key by running `wg genkey > wg-pi.key`.
@@ -119,16 +115,14 @@ Though most configuration sources found online highly recommend running HA on a 
 
 ![reference images](https://user-images.githubusercontent.com/73506948/224200404-9e979abe-7b9f-4bdf-a6fb-58a1e157f2b4.png)
 
-
-
-#### EC2 tunnel configuration
+#### EC2 Tunnel Configuration
 16. On your local machine, scroll to the section labelled <ec2 config> towards the bottom of the clipboard file.
 17. Replace <ec2 private key>, `<pi public key>`, `<network IP>`, and `<pi IP>` with the corresponding recorded information. For any smartplugs used, add the <device IP>/32 to the allowedIPs list at the bottom (with each IP separated by a comma).
 18. In your EC2 instance terminal, use your preferred text editor to create and edit a new Wireguard configuration file. Simply insert your favorite text editor in the place of 'vim' below.
     -  `sudo vim /etc/wireguard/HA-tunnel.conf`
 19. Copy your edited `<ec2config>` text into the new document and save.
 
-#### Pi tunnel setup
+#### Pi Tunnel Setup
 20.  On your local machine, scroll to the section labelled `<pi config>` towards the bottom of the clipboard file.
 21. Replace `<pi private key>` and `<ec2 public key>` with the corresponding recorded information.
 22. In your Pi terminal, use your preferred text editor to create and edit a new Wireguard configuration file. Simply insert your favorite text editor in the place of 'vim' below.
@@ -137,7 +131,6 @@ Though most configuration sources found online highly recommend running HA on a 
 
 ![reference images](https://user-images.githubusercontent.com/73506948/224200508-f7cfadcd-e5b8-4a41-aebd-5cf8a9777132.png)
 
-  
 #### Tunnel Startup
 24. In your Pi terminal, start the tunnel with the following command:
     - `sudo wg-quick up HA-tunnel`
@@ -150,7 +143,7 @@ Though most configuration sources found online highly recommend running HA on a 
 27. After a few seconds, press ctrl + c.
 28. If packets have "no packets have successfully transmitted," check the troubleshooting section. 
 
-### Connecting devices to Home Assistant
+### Connecting Devices to Home Assistant
 
 #### Kasa Smart Strip Plug for Damper Control
 1. Navigate to Home Assistant dashboard at `<HA IP>`:8123. 
@@ -161,8 +154,7 @@ Though most configuration sources found online highly recommend running HA on a 
 6. Paste `<device id>` of your smart plug and click submit.
 7. Repeat 4-6 times for each additional plug.
 
-
-#### ZemiSmart Curtains
+#### ZemiSmart Curtain Motor
 1. Log into Tuya IoT platform account. Select "Cloud" from left toolbar and click "Create Cloud Project" on the following screen.
 2. Fil in the Create Cloud Project form as follows:
     `Project Name: Home Assistant`
@@ -183,7 +175,8 @@ Though most configuration sources found online highly recommend running HA on a 
 13. Type 'tuya' into the search bar and select Tuya.
 14. Paste `<Access ID>` and `<Access Secret>` of your curtains as well as your Tuya Mobile App login credentials. Click submit. Be patient, registration may take up to a minute.
 15. Select the proper area for your curtains.
-    
+
+#### Yale Smart Lock `-----> ToDo <----------`
 
 ### Google Integration
 Home Assistant is compatible with Google Home/Assistant. This can be configured both ways: HA can be integrated into GH/A so that HA scripts can be run from GH/A and HA can send command requests to GH/A. Take a look at how this process works [here](https://github.com/brandondombrowsky/BastCastle/wiki/Google-Integration).
@@ -191,9 +184,6 @@ Home Assistant is compatible with Google Home/Assistant. This can be configured 
 ### Securing Devices in Home Assistant
 Home Assistant has some wonderful (and simple) settings for securing device access. Take a look at some of them [here](https://github.com/brandondombrowsky/BastCastle/wiki/Editing-User-Permissions-in-Home-Assistant).
 
-### Google Integration
-Home Assistant is compatible with Google Home/Assistant. This can be configured both ways: HA can be integrated into GH/A so that HA scripts can be run from GH/A and HA can send command requests to GH/A. Take a look at how this process works [here](https://github.com/brandondombrowsky/BastCastle/wiki/Google-Integration).
-
-### Checkout the Wiki page for more information. 
+### Checkout the Wiki Page for More Information. 
 - [Home](https://github.com/brandondombrowsky/BastCastle/wiki) - Documention, videos, and products and how they work.
 - [Wireguard VPN Setup](https://github.com/brandondombrowsky/BastCastle/wiki/Wireguard-VPN-Setup) - The nitty gritty of setting up your environment.
