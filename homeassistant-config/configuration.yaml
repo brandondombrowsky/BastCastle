@@ -42,5 +42,5 @@ switch:
         turn_on:
           service: script.lock_demo
         turn_off:
-          service: script.lock_demo # something different here?        # Check if this is necessary
+          service: script.lock_demo # something different here?
         value_template: '{{is_state("script.lock_demo", "on")}}'
