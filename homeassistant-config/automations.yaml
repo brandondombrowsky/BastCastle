@@ -121,9 +121,9 @@
     domain: switch
   - service: notify.persistent_notification
     data:
-      message: All dampers closed, Zone 1 opened.
+      message: All dampers closed, Zone 2 opened.
   - service: notify.notify
     data:
-      message: All dampers closed, Zone 1 open.
+      message: All dampers closed, Zone 2 opened.
     enabled: false
   mode: single
