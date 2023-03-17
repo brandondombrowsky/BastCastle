@@ -25,7 +25,7 @@ Though most configuration sources found online highly recommend running HA on a 
   - [ZemiSmart Curtain Motor with Track](https://www.zemismart.com/products/-bcm500ds-tyw)
 - Required Accounts
   - [AWS Cloud Services](https://aws.amazon.com/)
-  - tplink Kasa (mobile application account) `What is this? Doesn't follow format.`
+  - tplink Kasa (mobile application account)
   - Tuya Mobile App
   - Tuya Iot Platform
   - [Google Assistant](https://www.google.com/)
@@ -204,7 +204,6 @@ When the product name appears listed under devices, you will now the process has
 
 15. Select the proper area for your curtains
 
-#### Yale Smart Lock `-----> ToDo <----------`
 
 ### Google Integration
 Home Assistant is compatible with Google Home/Assistant. This can be configured both ways: HA can be integrated into GH/A so that HA scripts can be run from GH/A and HA can send command requests to GH/A. Unfortunately, the process has too many variables for a succinct walkthrough; instead take a look at how this process works and view helpful guides[in our wiki](https://github.com/brandondombrowsky/BastCastle/wiki/Google-Integration).
