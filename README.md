@@ -101,7 +101,12 @@ Though most configuration sources found online highly recommend running HA on a 
    - Record as `<aws public key>`
 9. Open a new terminal window locally. Do not close the terminal window connected to the aws instance.
 
-`--- todo: EC2 instance security rules (image; awaiting final "prod" changes to instance) ---`
+##### EC2 Security Group Rules
+Inbound:
+![ec2sec](https://user-images.githubusercontent.com/38815390/225781790-35b341ff-db82-4847-a8b5-83ff80796e7a.png)
+Outbound: All traffic
+
+
 
 #### Pi Wireguard Setup
 10. In the new terminal window, connect to the local Pi device using the command `ssh <pi username>@<pi local IP>` and entering the device password.
