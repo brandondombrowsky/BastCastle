@@ -1,8 +1,11 @@
-# Damper Automations
 - id: '1676525972977'
   alias: Open All Zones
   description: ''
-  trigger: []
+  trigger:
+  - platform: event
+    event_type: google_assistant_sdk_custom_event
+    event_data:
+      request: Open All Zones
   condition: []
   action:
   - type: turn_off
@@ -17,7 +20,11 @@
 - id: '1677732984708'
   alias: Close Zone 1
   description: ''
-  trigger: []
+  trigger:
+  - platform: event
+    event_type: google_assistant_sdk_custom_event
+    event_data:
+      request: Close Zone 1
   condition: []
   action:
   - type: turn_off
@@ -37,7 +44,11 @@
 - id: '1677733147879'
   alias: Close Zone 2
   description: ''
-  trigger: []
+  trigger:
+  - platform: event
+    event_type: google_assistant_sdk_custom_event
+    event_data:
+      request: Close Zone 2
   condition: []
   action:
   - type: turn_off
@@ -57,7 +68,11 @@
 - id: '1677733183899'
   alias: Open Zone 1
   description: ''
-  trigger: []
+  trigger:
+  - platform: event
+    event_type: google_assistant_sdk_custom_event
+    event_data:
+      request: Open Zone 1
   condition: []
   action:
   - type: turn_off
@@ -68,7 +83,11 @@
 - id: '1677733202266'
   alias: Open Zone 2
   description: ''
-  trigger: []
+  trigger:
+  - platform: event
+    event_type: google_assistant_sdk_custom_event
+    event_data:
+      request: Open Zone 2
   condition: []
   action:
   - type: turn_off
@@ -76,7 +95,7 @@
     entity_id: switch.power_strip_6_damper_2
     domain: switch
   mode: single
-- id: '1678346908526'
+- id: '1678770785577'
   alias: Damper Check
   description: ''
   trigger:
@@ -95,53 +114,16 @@
       device_id: 492ad6551d06b00d22a156bdde30507f
       entity_id: switch.power_strip_6_damper_2
       domain: switch
-    action:
-    - type: turn_off
-      device_id: 492ad6551d06b00d22a156bdde30507f
-      entity_id: switch.power_strip_5_damper_1
-      domain: switch
-    - service: persistent_notification.create
-      data:
-        message: All dampers closed, Zone 1 opened.
-      enabled: true
-    - service: notify.notify
-      data:
-        message: All dampers closed, Zone 1 opened.
-        title: ALL ZONES CLOSED
-      enabled: false
-  mode: single
-
-# Nice looking lock buttons in dashboard
-- id: '1678386842095'
-  alias: "Lock: status"
-  description: ""
-  trigger:
-  - platform: time_pattern
-    seconds: 10
-    id: time
-  - platform: event
-    event_type: google_assistant_sdk_custom_event
-    event_data:
-      request: Is my front door locked
-    id: status
-  condition: []
   action:
-  - choose:
-    - conditions:
-      - condition: trigger
-        id: time
-      sequence:
-      - service: google_assistant_sdk.send_text_command
-        data:
-          command: Is my front door locked
-    - conditions:
-      - condition: trigger
-        id: status
-      sequence:
-      - service: input_text.set_value
-        data:
-          value: "{{ trigger.event.data.response }}"
-        target:
-          entity_id: input_text.lock_status
-  mode: queued
-  max: 10
+  - type: turn_off
+    device_id: 492ad6551d06b00d22a156bdde30507f
+    entity_id: switch.power_strip_5_damper_1
+    domain: switch
+  - service: notify.persistent_notification
+    data:
+      message: All dampers closed, Zone 2 opened.
+  - service: notify.notify
+    data:
+      message: All dampers closed, Zone 2 opened.
+    enabled: false
+  mode: single
