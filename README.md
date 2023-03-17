@@ -101,7 +101,10 @@ From there, use your router to cross reference the MAC address with the associat
 
 ![Untitled14_20230314170134](https://user-images.githubusercontent.com/73506948/225216751-385fca6c-672f-45d8-9ea9-f586aa8c3717.png)
 
-`--- todo: EC2 instance security rules (image; awaiting final "prod" changes to instance) ---`
+##### EC2 Security Group Rules
+Inbound:
+![ec2sec](https://user-images.githubusercontent.com/38815390/225781790-35b341ff-db82-4847-a8b5-83ff80796e7a.png)
+Outbound: All traffic
 
 #### Pi Wireguard Setup
 10. In the new terminal window, connect to the local Pi device using the command `ssh <pi username>@<pi local IP>` and entering the device password.
