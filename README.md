@@ -98,13 +98,12 @@ From there, use your router to cross reference the MAC address with the associat
 8. View public key by running `cat wg-aws.pub`.
    - Record as `<aws public key>`
 9. Open a new terminal window locally. Do not close the terminal window connected to the aws instance.
-
+![Untitled14_20230314170134](https://user-images.githubusercontent.com/73506948/225216751-385fca6c-672f-45d8-9ea9-f586aa8c3717.png)
 
 ##### EC2 Security Group Rules
 Inbound:
 ![ec2sec](https://user-images.githubusercontent.com/38815390/225781790-35b341ff-db82-4847-a8b5-83ff80796e7a.png)
 Outbound: All traffic
-![Untitled14_20230314170134](https://user-images.githubusercontent.com/73506948/225216751-385fca6c-672f-45d8-9ea9-f586aa8c3717.png)
 
 #### Pi Wireguard Setup
 10. In the new terminal window, connect to the local Pi device using the command `ssh <pi username>@<pi local IP>` and entering the device password.
