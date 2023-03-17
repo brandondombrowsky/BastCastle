@@ -55,8 +55,10 @@ Though most configuration sources found online highly recommend running HA on a 
     - `sudo apt update`  
     - `sudo apt upgrade` 
     - `sudo reboot` 
+    
+    
+![Untitled22_20230314223409](https://user-images.githubusercontent.com/73506948/225216590-1fa80484-0376-44e8-8a8a-024969a81959.png)
 
-![reference images](https://user-images.githubusercontent.com/73506948/224200230-66b19bba-64e7-4679-96cd-018e800e2b7e.png)
 
 #### Testing
 12.  Open your favorite web browser and navigate to `<HA IP>`:8123. You should be greeted by the Home Assistant login page.
@@ -67,15 +69,11 @@ Though most configuration sources found online highly recommend running HA on a 
 
 ### Connecting Smart Devices to Local Network
 
-#### Kasa Smart Plug Strip
-1. Use instructions provided by manufacturer.
-2. Navigate the mobile app to the device information page and record the `<plug IP>`.
+For each smart device it is best to refer to the manufacturer's installation process, as most include proprietary apps to connect to your local network. When connecting the Kasa smart plugs, you will need to record the '<device IP>' for each plug. To do this, find the device MAC adddress as listed in the Kasa app under the device info section of device settings.
 
-#### Yale Smart Lock
-`Add something here?`
+![Untitled19_20230315231013](https://user-images.githubusercontent.com/73506948/225530664-cd28f826-b24b-487c-b8ec-5bfd6e963b91.png)
 
-#### ZemiSmart Curtain Motor with Track
-`Add something here?`
+From there, use your router to cross reference the MAC address with the associated IP.
 
 ### Configure Wireguard VPN Tunnel
 
@@ -101,6 +99,8 @@ Though most configuration sources found online highly recommend running HA on a 
    - Record as `<aws public key>`
 9. Open a new terminal window locally. Do not close the terminal window connected to the aws instance.
 
+![Untitled14_20230314170134](https://user-images.githubusercontent.com/73506948/225216751-385fca6c-672f-45d8-9ea9-f586aa8c3717.png)
+
 `--- todo: EC2 instance security rules (image; awaiting final "prod" changes to instance) ---`
 
 #### Pi Wireguard Setup
@@ -113,7 +113,8 @@ Though most configuration sources found online highly recommend running HA on a 
 15. View public key by running `cat wg-pi.pub`.
    - Record as `<pi public key>`
 
-![reference images](https://user-images.githubusercontent.com/73506948/224200404-9e979abe-7b9f-4bdf-a6fb-58a1e157f2b4.png)
+![Untitled14_20230314170039](https://user-images.githubusercontent.com/73506948/225216803-7178ed53-8589-423f-8aa1-2ef5c3c38961.png)
+
 
 #### EC2 Tunnel Configuration
 16. On your local machine, scroll to the section labelled <ec2 config> towards the bottom of the clipboard file.
@@ -122,6 +123,11 @@ Though most configuration sources found online highly recommend running HA on a 
     -  `sudo vim /etc/wireguard/HA-tunnel.conf`
 19. Copy your edited `<ec2config>` text into the new document and save.
 
+![Untitled21_20230314223146](https://user-images.githubusercontent.com/73506948/225218278-52efdfd9-dd4f-45fe-9387-8887bb2c0ccc.png)
+
+
+
+
 #### Pi Tunnel Setup
 20.  On your local machine, scroll to the section labelled `<pi config>` towards the bottom of the clipboard file.
 21. Replace `<pi private key>` and `<ec2 public key>` with the corresponding recorded information.
@@ -129,7 +135,7 @@ Though most configuration sources found online highly recommend running HA on a 
     -  `sudo vim /etc/wireguard/HA-tunnel.conf`
 23. Copy your edited `<pi config>` text into the new document and save.
 
-![reference images](https://user-images.githubusercontent.com/73506948/224200508-f7cfadcd-e5b8-4a41-aebd-5cf8a9777132.png)
+![Untitled21_20230314223106](https://user-images.githubusercontent.com/73506948/225218372-a415684e-9077-465e-84db-8f60f148e833.png)
 
 #### Tunnel Startup
 24. In your Pi terminal, start the tunnel with the following command:
@@ -154,6 +160,8 @@ Though most configuration sources found online highly recommend running HA on a 
 6. Paste `<device id>` of your smart plug and click submit.
 7. Repeat 4-6 times for each additional plug.
 
+If adding new devices after 1st install, you will also need to add their local IPs to the EC2 instance's wireguard config file. Follow the steps from EC2 configuration, but instead of copying and pasting the whole document, simply add the device's local IP to the list of allowed IPs towards the bottom of the document.
+
 #### ZemiSmart Curtain Motor
 1. Log into Tuya IoT platform account. Select "Cloud" from left toolbar and click "Create Cloud Project" on the following screen.
 2. Fil in the Create Cloud Project form as follows:
@@ -164,22 +172,42 @@ Though most configuration sources found online highly recommend running HA on a 
     `Data Center: Western America Data Center`
 3. Click "Create" button. Skip the configuration wizard and click Authorize.
 4. Record `<Access ID>`, `<Access Secret>`, and `<Project Code>`
+
+![Untitled17_20230314000248](https://user-images.githubusercontent.com/73506948/225218610-62a9c3dc-131f-4ac4-860b-138388bb2b67.png)
+
+
 5. Navigate to the "Devices" tab. Select "Link Tuya App Account" and click "Add App Account." A barcode should appear.
 6. Open the Tuya App on your mobile device. Click the "Me" tab on the bottom navigation bar and the barcode scan button on the resulting page
+
+![6 TuyaMobile](https://user-images.githubusercontent.com/73506948/225525199-c3629973-88d8-401d-85c1-6067d1b999fd.jpeg)
+
+
 7. Scan the barcode from step 5. A dialoue box will replace the barcode. Set "Device Linking Method" to Automatic Linking and "Device Permission"  to Read, write, and Manage. Press "OK"
 8. Wait a moment. When the product name appears listed under devices, you will now the process has been successful.
+
+![reference image](https://user-images.githubusercontent.com/73506948/225526847-730101a2-41e8-4928-9367-ae33229036b2.png)
+
+When the product name appears listed under devices, you will now the process has been successful.
+
+!reference image](https://user-images.githubusercontent.com/73506948/225527622-cc278b72-25e9-4c3e-abe9-eaee2cf7786e.png)
+
+
+
 9. Navigate to Home Assistant dashboard at `<HA IP>`:8123. 
 10. Login using `<HA user>` & `<HA password>`.
 11. In the dashboard click Settings -> Devices and Integrations. 
 12. Click "Add Integration." 
 13. Type 'tuya' into the search bar and select Tuya.
 14. Paste `<Access ID>` and `<Access Secret>` of your curtains as well as your Tuya Mobile App login credentials. Click submit. Be patient, registration may take up to a minute.
-15. Select the proper area for your curtains.
+
+![reference image](https://user-images.githubusercontent.com/73506948/225218506-8ccca51f-1db5-49cd-bde4-e61a142cc78c.png)
+
+15. Select the proper area for your curtains
 
 #### Yale Smart Lock `-----> ToDo <----------`
 
 ### Google Integration
-Home Assistant is compatible with Google Home/Assistant. This can be configured both ways: HA can be integrated into GH/A so that HA scripts can be run from GH/A and HA can send command requests to GH/A. Take a look at how this process works [here](https://github.com/brandondombrowsky/BastCastle/wiki/Google-Integration).
+Home Assistant is compatible with Google Home/Assistant. This can be configured both ways: HA can be integrated into GH/A so that HA scripts can be run from GH/A and HA can send command requests to GH/A. Unfortunately, the process has too many variables for a succinct walkthrough; instead take a look at how this process works and view helpful guides[in our wiki](https://github.com/brandondombrowsky/BastCastle/wiki/Google-Integration).
 
 ### Securing Devices in Home Assistant
 Home Assistant has some wonderful (and simple) settings for securing device access. Take a look at some of them [here](https://github.com/brandondombrowsky/BastCastle/wiki/Editing-User-Permissions-in-Home-Assistant).
