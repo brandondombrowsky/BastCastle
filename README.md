@@ -30,7 +30,7 @@ Though most configuration sources found online highly recommend running HA on a 
   - Tuya Iot Platform
   - [Google Assistant](https://www.google.com/)
   - [Duck DNS](https://www.duckdns.org/)
-- We also reccomend downloading `[this sheet]()` `What?` for storing all information you will be copying and/or pasting in this process, and inputing the following information:
+- We also reccomend downloading `[this sheet](https://github.com/brandondombrowsky/BastCastle/blob/9c0a1b64dc4dcfcc75e6f66b2d07ce68fc3129b3/clipboard.txt)` for storing all information you will be copying and/or pasting in this process, and inputing the following information:
   - `<pi IP>`
   - `<network IP>`
 
