@@ -30,7 +30,7 @@ jobs:
           remote_user: ubuntu
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
       - name: Restart Home Assistant
-        uses: appleboy/ssh-action@v0.1.8
+        uses: appleboy/ssh-action@v0.1.10
         with:
           host: ec2-35-91-223-141.us-west-2.compute.amazonaws.com # todo: make a repo variable?
           username: ubuntu
